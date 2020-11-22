@@ -1,3 +1,3 @@
 # Langi Django App
 
-first commit
+first commit!
