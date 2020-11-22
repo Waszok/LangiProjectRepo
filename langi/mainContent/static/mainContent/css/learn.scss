@@ -1,0 +1,209 @@
+/////////////////////////////////////////////////////////////////////////////
+////////////////////-----------------CONTENT-------------------//////////////
+.contentArea {
+    grid-template-columns: 70px 200px auto 100px 70px;
+    padding: 60px 0 0;
+    margin-top: 50px;
+}
+
+.learn-header {
+    margin-top: -15px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+    .learn-header-top {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        .title {
+            font-size: 18px;
+            font-weight: 400;
+            margin-right: 10px;
+        }
+
+        .help-text {
+            font-size: 14px;
+            font-weight: 400;
+        }
+    }
+
+    .deck-selection-content {
+        position: relative;
+        z-index: 10;
+
+        .deck-selection {
+            position: absolute;
+            margin-left: 100px;
+        }
+    }
+}
+
+.learn-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    .front-back-text {
+        margin-left: -20px;
+        font-size: 18px;
+        font-weight: 400;
+    }
+
+    .extra-content {
+        display: flex;
+        .img-and-audio {
+            display: flex;
+
+            .player { 
+                background-color: transparent;
+            }
+        }
+
+        .flashcard-hide {
+            display: none;
+        }
+
+        .show-img-audio {
+            width: 20px;
+            height: 20px;
+            margin-left: -20px;
+            margin-right: 10px;
+        }
+
+        .example-img {
+            width: 200px;
+            height: 200px;
+        }
+    }
+
+    .learn-flashcard-text {
+        font-size: 20px;
+        margin-top: 10px;
+        word-wrap: break-word; 
+        width: 500px;
+        overflow-y: scroll;
+        margin-left: 10px;
+    }
+
+    .learn-falshcard-im {
+        width: 450px;
+    }
+
+    .learn-flashcard-sentences-container {
+        display: flex;
+
+        .show-sentences{
+            margin-top: 20px;
+            width: 20px;
+            height: 20px;
+            margin-left: -20px;
+            margin-right: 10px;
+        }
+
+        .sentences-hide {
+            display: none;
+        }
+
+        .learn-flashcard-sentences{
+            margin-top: 20px;
+            word-wrap: break-word; 
+            width: 500px;
+            max-height: 200px;
+            overflow-y: scroll;
+            
+            .learn-flashcard-sentence {
+                font-size: 15px;
+            }
+        }
+    }
+    
+    .learn-flashcard-buttons {
+        margin-top: 20px;
+        justify-content: flex-end;
+
+        .learn-flashcard-btn {
+            position: relative;
+            min-width: 95px;
+            border: 2px solid var(--border-button-color);
+            padding: 10px;
+
+            .btn {
+                font-size: 12px;
+            }
+        }
+        
+        .buttons-back {
+            display: flex;
+            
+            #learn-again {
+                margin-right: 5px;
+            }
+
+            #learn-very-hard {
+                margin-right: 5px;
+            }
+
+            #learn-hard {
+                margin-right: 5px;
+            }
+
+            #learn-medium {
+                margin-right: 5px;
+            }
+        }
+    }
+
+    .unactive-player {
+        opacity: 0.5;
+    }
+}
+
+.learn-flashcard-side-panel {
+    position: absolute;
+    top: 150px;
+    right: 300px;
+
+    .learn-flashcard-counter {
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    .learn-flashcard-shortcuts {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+
+        .learn-flashcard-shortcut {
+            display: flex;
+            align-items: center;
+
+            img {
+                margin-left: 5px;
+            }
+        }
+
+        .learn-flashcard-shortcut-text {
+            font-size: 16px;
+        }
+
+        .learn-flashcard-shortcut-number {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--highlight-color);
+        }
+
+        span {
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        .spacebar-icon {
+            width: 60px;
+        }
+    }
+}
+

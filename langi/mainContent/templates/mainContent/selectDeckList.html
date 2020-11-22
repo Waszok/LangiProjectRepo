@@ -1,0 +1,18 @@
+{% load i18n %}
+{% load static %}
+<div class="common-select-deck">
+    <input type="text" name="common-selected-deck" class="common-selected-deck no-decks" value="no decks">
+    <div class="common-open-list-btn">
+        <a class="common-open-list">
+            <img src="{% static 'mainContent/images/downArrowBlack.png' %}"
+                class="arrow-deck-list-black arrow-deck-list" onmouseover="CommonListhover()"
+                onmouseout="CommonListunhover()">
+            <img src="{% static 'mainContent/images/downArrowWhite.png' %}"
+                class="arrow-deck-list-white arrow-deck-list" onmouseover="CommonListhover()"
+                onmouseout="CommonListunhover()">
+        </a>
+    </div>
+
+    <ul class="common-deck-list" style="display: none;">
+    </ul>
+</div>

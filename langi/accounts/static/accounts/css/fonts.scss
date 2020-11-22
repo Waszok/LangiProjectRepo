@@ -1,0 +1,199 @@
+//Noto Sans
+
+@font-face {
+    font-family: 'Noto Sans';
+    src: url('../../../../static/management/fonts/NotoSans/notosans-thin-webfont.eot');
+    src: url('../../../../static/management/fonts/NotoSans/notosans-thin-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../../../static/management/fonts/NotoSans/notosans-thin-webfont.woff2') format('woff2'),
+         url('../../../../static/management/fonts/NotoSans/notosans-thin-webfont.woff') format('woff'),
+         url('../../../../static/management/fonts/NotoSans/notosans-thin-webfont.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    src: url('../../../../static/management/fonts/NotoSans/notosans-light-webfont.eot');
+    src: url('../../../../static/management/fonts/NotoSans/notosans-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../../../static/management/fonts/NotoSans/notosans-light-webfont.woff2') format('woff2'),
+         url('../../../../static/management/fonts/NotoSans/notosans-light-webfont.woff') format('woff'),
+         url('../../../../static/management/fonts/NotoSans/notosans-light-webfont.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    src: url('../../../../static/management/fonts/NotoSans/notosans-regular-webfont.eot');
+    src: url('../../../../static/management/fonts/NotoSans/notosans-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../../../static/management/fonts/NotoSans/notosans-regular-webfont.woff2') format('woff2'),
+         url('../../../../static/management/fonts/NotoSans/notosans-regular-webfont.woff') format('woff'),
+         url('../../../../static/management/fonts/NotoSans/notosans-regular-webfont.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    src: url('../../../../static/management/fonts/NotoSans/notosans-medium-webfont.eot');
+    src: url('../../../../static/management/fonts/NotoSans/notosans-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../../../static/management/fonts/NotoSans/notosans-medium-webfont.woff2') format('woff2'),
+         url('../../../../static/management/fonts/NotoSans/notosans-medium-webfont.woff') format('woff'),
+         url('../../../../static/management/fonts/NotoSans/notosans-medium-webfont.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    src: url('../../../../static/management/fonts/NotoSans/notosans-semibold-webfont.eot');
+    src: url('../../../../static/management/fonts/NotoSans/notosans-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../../../static/management/fonts/NotoSans/notosans-semibold-webfont.woff2') format('woff2'),
+         url('../../../../static/management/fonts/NotoSans/notosans-semibold-webfont.woff') format('woff'),
+         url('../../../../static/management/fonts/NotoSans/notosans-semibold-webfont.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    src: url('../../../../static/management/fonts/NotoSans/notosans-bold-webfont.eot');
+    src: url('../../../../static/management/fonts/NotoSans/notosans-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../../../static/management/fonts/NotoSans/notosans-bold-webfont.woff2') format('woff2'),
+         url('../../../../static/management/fonts/NotoSans/notosans-bold-webfont.woff') format('woff'),
+         url('../../../../static/management/fonts/NotoSans/notosans-bold-webfont.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+// Noto Sans CJK JP
+
+@font-face {
+    font-family: 'Noto Sans CJK JP';
+    src: url('../../../../static/management/fonts/NotoSansCJKJP/NotoSansCJKjp-Thin.otf') format("opentype");
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto Sans CJK JP';
+    src: url('../../../../static/management/fonts/NotoSansCJKJP/NotoSansCJKjp-Light.otf') format("opentype");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto Sans CJK JP';
+    src: url('../../../../static/management/fonts/NotoSansCJKJP/NotoSansCJKjp-Regular.otf') format("opentype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto Sans CJK JP';
+    src: url('../../../../static/management/fonts/NotoSansCJKJP/NotoSansCJKjp-Medium.otf') format("opentype");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto Sans CJK JP';
+    src: url('../../../../static/management/fonts/NotoSansCJKJP/NotoSansCJKjp-Bold.otf') format("opentype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+// Noto Sans CJK KR
+
+@font-face {
+    font-family: 'Noto Sans CJK KR';
+    src: url('../../../../static/management/fonts/NotoSansCJKKR/NotoSansCJKkr-Thin.otf') format("opentype");
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto Sans CJK KR';
+    src: url('../../../../static/management/fonts/NotoSansCJKKR/NotoSansCJKkr-Light.otf') format("opentype");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto Sans CJK KR';
+    src: url('../../../../static/management/fonts/NotoSansCJKKR/NotoSansCJKkr-Regular.otf') format("opentype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto Sans CJK KR';
+    src: url('../../../../static/management/fonts/NotoSansCJKKR/NotoSansCJKkr-Medium.otf') format("opentype");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto Sans CJK KR';
+    src: url('../../../../static/management/fonts/NotoSansCJKKR/NotoSansCJKkr-Bold.otf') format("opentype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+// Noto Sans CJK TC
+
+@font-face {
+    font-family: 'Noto Sans CJK TC';
+    src: url('../../../../static/management/fonts/NotoSansCJKTC/NotoSansCJKtc-Thin.otf') format("opentype");
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto Sans CJK TC';
+    src: url('../../../../static/management/fonts/NotoSansCJKTC/NotoSansCJKtc-Light.otf') format("opentype");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto Sans CJK TC';
+    src: url('../../../../static/management/fonts/NotoSansCJKTC/NotoSansCJKtc-Regular.otf') format("opentype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto Sans CJK TC';
+    src: url('../../../../static/management/fonts/NotoSansCJKTC/NotoSansCJKtc-Medium.otf') format("opentype");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto Sans CJK TC';
+    src: url('../../../../static/management/fonts/NotoSansCJKTC/NotoSansCJKtc-Bold.otf') format("opentype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+////////////////////////////////////////////////////////////////////
+@font-face {
+    font-family: 'Noto Sans Arabic';
+    src: url('../../../../static/management/fonts/NotoSansArabic/NotoSansArabic-Regular.ttf') format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto Sans Korean';
+    src: url('../../../../static/management/fonts/NotoSansKR-Regular.otf') format("opentype");
+    font-weight: 300;
+    font-style: normal;
+}

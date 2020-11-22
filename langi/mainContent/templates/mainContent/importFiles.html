@@ -1,0 +1,34 @@
+{% load i18n %}
+{% load static %}
+
+<div class="import-files-window" id="import-files-window">
+    <div class="add-header import-files-header">
+        <div class="add-header-top import-files-header-top">
+            <div class="title">{% trans "Import Files" %}</div>
+            <button data-import-files-close class="close-btn">&times;</button>
+        </div>
+    </div>
+    <div class="body-and-select-container">
+        <div class="import-deck-selection-content">
+            <div class="import-no-deck-error" id="import-no-deck-error">
+                {% trans 'You should choose any deck.' %}</div>
+            <div class="deck-selection">
+                {% include 'mainContent/selectDeckList.html' %}
+            </div>
+        </div>
+        <div class="import-files-body">
+            <div class="import-files-headings">
+                <div class="import-files-title">
+                    <p>{% trans 'Import from text file' %}</p>
+                </div>
+                <div class="import-files-title">
+                    <p>{% trans 'Import from image file' %}</p>
+                </div>
+            </div>
+            <div class="import-files-line"></div>
+            <div class="import-files-contents">
+                {% include 'mainContent/importTextFiles.html' %}
+            </div>
+        </div>
+    </div>
+</div>

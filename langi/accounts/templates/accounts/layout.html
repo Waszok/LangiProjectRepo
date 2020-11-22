@@ -1,0 +1,60 @@
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}{% endblock %}</title>
+        {% load sass_tags %}
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% sass_src 'accounts/css/accounts.scss' %}">
+        <link rel="stylesheet" type="text/css" href="{% sass_src 'accounts/css/fonts.scss' %}">
+
+
+        {% block css %}{% endblock %}
+        <!-- Fonts -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.207/distr/fira_code.css">
+        <!--<link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Sans+SC:wght@100;300;400;500;700;900&family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet">-->
+
+        <!-- Username, password icons -->
+        <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+
+        <!-- Social Media Icons -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+
+    <body id="main-body" onload="initializeBody('{{ LANGUAGE_CODE }}')">
+
+        <div class="container">
+            <nav class="navigation">
+                <div class="logo">
+                    <a href="{% url 'accounts:login' %}"><img src="{% static 'accounts/images/LogoNameDark.png' %}"
+                            alt="Application logo"></a>
+                </div>
+            </nav>
+
+            {% block contentTP %}
+            {% endblock %}
+
+
+            <div class="form-box">
+                <div class="login-content">
+                    {% block content %}
+                    {% endblock %}
+                </div>
+            </div>
+
+            {% include 'accounts/footer.html' %}
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+        <script type="text/javascript" src="{% static 'accounts/js/main.js' %}"></script>
+        {% block js %}
+        {% endblock %}
+    </body>
+
+</html>

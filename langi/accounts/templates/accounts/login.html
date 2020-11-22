@@ -1,0 +1,70 @@
+{% extends 'accounts/layout.html' %}
+{% load static %}
+{% load i18n %}
+{% load widget_tweaks %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+{% get_current_language as LANGUAGE_CODE %}
+
+<form method="POST" action="{% url 'accounts:login' %}" novalidate>
+    {% csrf_token %}
+    <div class="form__welcome welcome" id="welcome">
+        <img class="welcome__flagIcon" src="{% static 'accounts/images/flags/turkey.svg' %}" alt="Flag icon">
+        <h1 class="welcome__title">{% trans "Welcome" %}</h1>
+    </div>
+    <div class="input-div uname">
+        <div class="i">
+            <i class="fas fa-user"></i>
+        </div>
+        <div class="div">
+            <h5>{% trans "Username" %}</h5>
+            {% render_field form.username type="text" class="input" %}
+            <!--<input type="text" class="input">-->
+        </div>
+    </div>
+    <div class="input-div pass">
+        <div class="i">
+            <i class="fas fa-lock"></i>
+        </div>
+        <div class="div">
+            <h5>{% trans "Password" %}</h5>
+            {% render_field form.password type="password" class="input" %}
+            <!--<input type="password" class="input">-->
+        </div>
+    </div>
+    <a class="link" href="{% url 'accounts:password_reset' %}">{% trans "Forgot Password?" %}</a>
+
+    {% if form.errors %}
+    {% for error, value in form.error_messages.items %}
+    {% if error == "invalid_login" %}
+    <p class="user-message">{{ value }}</p>
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+
+    {% if messages %}
+    {% for message in messages %}
+    {% if message.tags == 'success' %}
+    <p class="user-message user-created">{{ message }}</p>
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+
+
+    <input type="submit" class="btn" value="{% trans 'Login' %}" id="login-btn">
+    <div class="signup" id="signup-question">
+        <p class="link-signup-question">{% trans "Don't have an account?" %}</p>
+        <a class="link link-signup" href="{% url 'accounts:signup' %}">{% trans "Sign Up" %}</a>
+    </div>
+</form>
+
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript" src="{% static 'accounts/js/login.js' %}"></script>
+<script type="text/javascript">
+    initializeLogin('{{ LANGUAGE_CODE }}');
+</script>
+{% endblock %}

@@ -1,0 +1,16 @@
+.contentArea {
+  grid-template-columns: 70px 240px auto 100px 70px;
+  padding: 60px 0 0; }
+
+.slick-prev {
+  top: calc(50% - 230px);
+  left: 25%; }
+
+.slick-next {
+  bottom: calc(50% - 215px);
+  left: 25%; }
+
+.about-content .about-main-text {
+  font-weight: 400; }
+
+/*# sourceMappingURL=about.css.map */

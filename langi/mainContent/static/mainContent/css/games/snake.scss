@@ -1,0 +1,126 @@
+.game-board {
+    position: relative;
+    background-color: var(--snake-board-color);
+    width: 60vmin;
+    height: 60vmin;
+    left: calc(50% - 30vmin);
+
+    border: 2px solid var(--snake-board-border);
+
+    display: grid;
+    grid-template-rows: repeat(21, 1fr);
+    grid-template-columns: repeat(21, 1fr);
+}
+
+.snake-overflow {
+    border: 10px solid var(--error-warning-color);
+    opacity: 0.4;
+}
+
+.snake {
+    background-color: hsl(200, 100%, 50%);
+}
+
+.food1 {
+    background-color: hsl(50, 100%, 50%);
+    border: .25vmin solid black;
+}
+
+.food2 {
+    background-color: hsl(110, 39%, 56%);
+    border: .25vmin solid black;
+}
+
+.food3 {
+    background-color: hsl(352, 47%, 53%);
+    border: .25vmin solid black;
+}
+
+//SIDE PANEL (SCORE, LIFES, DROWN WORD/PHRASE AND ANSWERS)
+.snake-side-panel {
+    top: 0;
+    left: calc(50% + 31vmin);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+
+    .lifes {
+        .life-flag {
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    .drawn-word-content,
+    .snake-score {
+        .drawn-word {
+            width: 250px;
+            font-size: 12px;
+            font-weight: 400;
+        }
+
+        .drawn-word-text {
+            font-weight: 500;
+        }
+    }
+
+    .snake-score {
+        span {
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        .snake-score-text {
+            font-size: 16px;
+            font-weight: 500;
+        }
+    }
+
+    .possible-translations {
+        margin-top: 15px;
+        display: flex;
+        flex-direction: column;
+
+        .translation-one,
+        .translation-two,
+        .translation-three {
+            display: flex;
+            align-items: center;
+
+            .box {
+                margin-right: 5px;
+                border: .25vmin solid black;
+                width: 25px;
+                height: 25px;
+            }
+
+            .box-one {
+                background-color: hsl(50, 100%, 50%);
+            }
+
+            .box-two {
+                margin-top: 10px;
+                background-color: hsl(110, 39%, 56%);
+            }
+
+            .box-three {
+                margin-top: 10px;
+                background-color: hsl(352, 47%, 53%);
+            }
+
+            .translation-word {
+                width: 250px;
+                font-size: 12px;
+                font-weight: 400;
+            }
+
+            #translation-two {
+                margin-top: 10px;
+            }
+
+            #translation-three {
+                margin-top: 10px;
+            }
+        }
+    }
+}

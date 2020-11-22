@@ -1,0 +1,80 @@
+.dictionary-window {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  border: 3px solid var(--border-button-color);
+  box-shadow: 2px 2px 6px 0 #25313F;
+  background-color: var(--panel-color);
+  z-index: 200;
+  min-width: 600px;
+  max-width: 80%; }
+
+.dictionary-window.active {
+  transform: translate(-50%, -50%) scale(1); }
+
+.body-and-select-container {
+  overflow-y: scroll; }
+  .body-and-select-container .dict-deck-selection-content {
+    position: relative; }
+    .body-and-select-container .dict-deck-selection-content .deck-selection {
+      position: absolute;
+      right: 20px; }
+
+.dictionary-body {
+  display: flex;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 40px; }
+
+.dict-content {
+  max-height: 360px;
+  width: 800px;
+  overflow-y: scroll;
+  overflow-x: hidden; }
+  .dict-content .dict-content-ele-container {
+    width: inherit; }
+    .dict-content .dict-content-ele-container .dict-content-list-line {
+      margin: 5px;
+      width: 100%;
+      height: 2px;
+      background-color: var(--border-button-color); }
+    .dict-content .dict-content-ele-container .dict-content-list-ele {
+      width: inherit;
+      display: flex;
+      padding: 0 5px 0 5px;
+      font-size: 12px;
+      font-weight: 400;
+      justify-content: center; }
+      .dict-content .dict-content-ele-container .dict-content-list-ele .content-front-ele,
+      .dict-content .dict-content-ele-container .dict-content-list-ele .content-back-ele {
+        display: flex;
+        justify-content: center;
+        width: 43%; }
+        .dict-content .dict-content-ele-container .dict-content-list-ele .content-front-ele p,
+        .dict-content .dict-content-ele-container .dict-content-list-ele .content-back-ele p {
+          overflow-wrap: break-word;
+          word-wrap: break-word;
+          hyphens: auto; }
+        .dict-content .dict-content-ele-container .dict-content-list-ele .content-front-ele .content-front-box,
+        .dict-content .dict-content-ele-container .dict-content-list-ele .content-front-ele .content-back-box,
+        .dict-content .dict-content-ele-container .dict-content-list-ele .content-back-ele .content-front-box,
+        .dict-content .dict-content-ele-container .dict-content-list-ele .content-back-ele .content-back-box {
+          display: inline; }
+      .dict-content .dict-content-ele-container .dict-content-list-ele .content-ele-separator {
+        display: flex;
+        justify-content: center;
+        width: 5%; }
+      .dict-content .dict-content-ele-container .dict-content-list-ele .content-ele-separator::after {
+        content: '';
+        position: relative;
+        width: 2px;
+        height: 100%;
+        background: var(--border-button-color);
+        font-size: 12px;
+        text-align: center; }
+
+/*# sourceMappingURL=dictionary.css.map */

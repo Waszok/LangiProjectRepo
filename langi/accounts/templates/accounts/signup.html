@@ -1,0 +1,177 @@
+{% extends 'accounts/layout.html' %}
+{% load static %}
+{% load sass_tags %}
+
+{% load i18n %}
+{% load widget_tweaks %}
+{% load accounts.accounts_tags %}
+
+{% block title %}SignUp{% endblock %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% sass_src 'accounts/css/signup.scss' %}">
+{% endblock %}
+
+
+{% block content %}
+
+{% get_current_language as LANGUAGE_CODE %}
+{% get_language_info for LANGUAGE_CODE as lang %}
+
+<form name="setLangEnglish" action="{% url 'set_language' %}" method="post" class="set-lang">
+    {% csrf_token %}
+    <input type="hidden" name="next" value="{{ redirect_to }}">
+    <input type="hidden" name="language" value="en" id="lang-code" />
+</form>
+
+<form method="POST" action="{% url 'accounts:signup' %}" novalidate>
+    {% csrf_token %}
+    <div class="form__logo-panel logo-panel">
+        <img class="logo-panel__full-logo" src="{% static 'accounts/images/FullLogo.png' %}" alt="Full Logo">
+        <h1 class="logo-panel__title">{% trans "Create Account" %}</h1>
+    </div>
+    <div class="input-div uname">
+        <div class="i">
+            <i class="fas fa-user"></i>
+        </div>
+        <div class="div">
+            <h5>{% trans "Username" %}</h5>
+            {% render_field form.username type="text" class="input" %}
+            <!--<input type="text" class="input">-->
+        </div>
+        <div class="info-div">
+            <i class="fas fa-info-circle info-icon"></i>
+            <div class="info-popup">
+                {{ form.username.help_text }}
+            </div>
+        </div>
+    </div>
+    <div class="input-div email">
+        <div class="i">
+            <i class="fas fa-envelope"></i>
+        </div>
+        <div class="div">
+            <h5>{% trans "Email" %}</h5>
+            <!--<input type="email" class="input">-->
+            {% render_field form.email type="email" class="input" %}
+        </div>
+    </div>
+    <div class="input-div pass">
+        <div class="i">
+            <i class="fas fa-lock"></i>
+        </div>
+        <div class="div">
+            <h5>{% trans "Password" %}</h5>
+            <!--<input type="password" class="input">-->
+            {% render_field form.password1 type="password" class="input" %}
+        </div>
+        <div class="info-div">
+            <i class="fas fa-info-circle info-icon"></i>
+            <div class="info-popup">
+                {{ form.password1.help_text }}
+            </div>
+        </div>
+    </div>
+    <div class="input-div pass">
+        <div class="i">
+            <i class="fas fa-lock"></i>
+        </div>
+        <div class="div">
+            <h5>{% trans "Confirm Password" %}</h5>
+            <!--<input type="password" class="input">-->
+            {% render_field form.password2 type="password" class="input" %}
+        </div>
+    </div>
+
+    <div class="select-language">
+        <div class="select-language__chose chose">
+            <div class="open-list-btn">
+                <a id="open-list" onclick="langSelected('{{ LANGUAGE_CODE }}')"><img
+                        src="{% static 'accounts/images/LeftArrow.png' %}" id="arrow" onmouseover="hover()"
+                        onmouseout="unhover()"></a>
+            </div>
+            <!--<input class="selected-language" value="{{ lang.name_local }}" id="selected-language-btn">
+            {% render_field form.language type="text" class="selected-language" id="selected-language-btn" %}-->
+            <input type="text" name="{{ form.language.name }}" class="selected-language" value="{{ lang.name_local }}"
+                id="selected-language-btn" maxlength="{{ form.language.field.max_length }}"
+                {% if form.language.field.required %}required{% endif %}>
+            <ul id="list-languages" style="display: none">
+                <li onclick="changeLanguage('de')" id="de" class='langfamily-ns'>
+                    <p>Deutsch</p>
+                </li>
+                <li onclick="changeLanguage('cs')" id="cs" class='langfamily-ns'>
+                    <p>Český</p>
+                </li>
+                <li onclick="changeLanguage('en')" id="en" class='langfamily-ns'>
+                    <p>English</p>
+                </li>
+                <li onclick="changeLanguage('es')" id="es" class='langfamily-ns'>
+                    <p>Español</p>
+                </li>
+                <li onclick="changeLanguage('fr')" id="fr" class='langfamily-ns'>
+                    <p>Français</p>
+                </li>
+                <li onclick="changeLanguage('it')" id="it" class='langfamily-ns'>
+                    <p>Italiano</p>
+                </li>
+                <li onclick="changeLanguage('lt')" id="lt" class='langfamily-ns'>
+                    <p>Lietuviškai</p>
+                </li>
+                <li onclick="changeLanguage('nl')" id="nl" class='langfamily-ns'>
+                    <p>Nederlands</p>
+                </li>
+                <li onclick="changeLanguage('pl')" id="pl" class='langfamily-ns'>
+                    <p>Polski</p>
+                </li>
+                <li onclick="changeLanguage('pt')" id="pt" class='langfamily-ns'>
+                    <p>Português</p>
+                </li>
+                <li onclick="changeLanguage('tr')" id="tr" class='langfamily-ns'>
+                    <p>Türkçe</p>
+                </li>
+                <li onclick="changeLanguage('ru')" id="ru" class='langfamily-ns'>
+                    <p>Русский</p>
+                </li>
+                <li onclick="changeLanguage('zh-tw')" id="zh-tw" class='langfamily-tc'>
+                    <p>繁體中文</p>
+                </li>
+                <li onclick="changeLanguage('ja')" id="ja" class='langfamily-jp'>
+                    <p>日本語</p>
+                </li>
+                <li onclick="changeLanguage('ko')" id="ko" class='langfamily-kr'>
+                    <p>한국어</p>
+                </li>
+                <li onclick="changeLanguage('el')" id="el" class='langfamily-ns'>
+                    <p>Ελληνικά</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="checkbox-wrapper">
+        <!--<input type="checkbox" id="check" hidden>-->
+        <input type="checkbox" name="{{ form.agreement.name }}" id="check" hidden
+            {% if form.agreement.field.required %}required{% endif %}>
+        <label for="check" class="checkmark" id="checkLabel"></label>
+        <div class="agreement-text" id="agreement">
+            {% trans "I read and agree to " %}<a class="link"
+                href="{% url 'accounts:terms' %}">{% trans "Terms &amp; Conditions" %}</a>
+            <p class="second-line-agreement" id="second-line">{% trans " " %}</p>
+        </div>
+    </div>
+
+    <p class="user-message">{{ form|getMessage }}</p>
+
+    <input type="submit" class="btn" value="{% trans 'Sign Up' %}" id="signup-btn">
+    <div class="signup">
+        <p class="link-signup-question">{% trans "Already have an account?" %}</p>
+        <a class="link link-signup" href="{% url 'accounts:login' %}">{% trans "Sign In" %}</a>
+    </div>
+</form>
+
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript" src="{% static 'accounts/js/signup.js' %}"></script>
+<script type="text/javascript">
+    initializeSignUp('{{ LANGUAGE_CODE }}');
+</script>
+{% endblock %}

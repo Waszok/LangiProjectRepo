@@ -1,0 +1,69 @@
+.input-div .div{
+    position: relative;
+    height: 25px;
+}
+
+.input-div div h5{
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--input-standard-color);
+    font-size: 15px;
+    transition: .3s;
+}
+
+.input-div:before, .input-div:after{
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    width: 0%;
+    height: 2px;
+    background-color: #FFB02B;
+    transition: .4s;
+}
+
+.input-div:before{
+    right: 50%;
+}
+
+.input-div:after{
+    left: 50%;
+}
+
+.input-div.focus:before, .input-div.focus:after{
+    width: 50%;
+}
+
+.input-div.focus div h5{
+    top: -7px;
+    font-size: 13px;
+    color: var(--input-focus-color);;
+}
+
+.input-div div input{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: none;
+    padding: 8px 5px;
+    font-size: 14px;
+    color: var(--text-color);
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.input-div div input::selection {
+    background: var(--input-selection-color);
+    color: var(--background-color);
+    text-shadow: none;
+}
+  
+.input-div div input::-webkit-selection{
+    background: var(--input-selection-color);
+    color: var(--background-color);
+    text-shadow: none;
+}

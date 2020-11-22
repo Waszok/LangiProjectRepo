@@ -1,0 +1,25 @@
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+body {
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 300;
+  color: #25313F;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden; }
+
+.navigation {
+  display: flex;
+  align-items: center; }
+
+.menu {
+  display: flex; }
+
+/*# sourceMappingURL=contentt.css.map */

@@ -1,0 +1,80 @@
+{% load static %}
+{% load sass_tags %}
+
+{% load i18n %}
+{% load widget_tweaks %}
+
+<div class="deck-settings-window" id="deck-settings-window">
+    <div class="add-header deck-settings-header">
+        <div class="add-header-top deck-settings-header-top">
+            <div class="title">{% trans 'Deck Settings' %}</div>
+            <button data-decksettings-close class="close-btn">&times;</button>
+        </div>
+        <span class="deck-settings-deck-name">Testowa nazwa talii</span>
+    </div>
+    <div class="deck-settings-body">
+        <div class="deck-set-headings">
+            <div class="deck-set-title">
+                <p>{% trans 'Delete' %}</p>
+            </div>
+            <div class="deck-set-title">
+                <p>{% trans 'Rename' %}</p>
+            </div>
+            <div class="deck-set-title">
+                <p>{% trans 'Change Tag' %}</p>
+            </div>
+            <div class="deck-set-title">
+                <p>{% trans 'Import from text file' %}</p>
+            </div>
+            <div class="deck-set-title">
+                <p>{% trans 'Import from image file' %}</p>
+            </div>
+        </div>
+        <div class="deck-set-line"></div>
+        <div class="deck-set-contents">
+            <div class="deck-set-content">
+                <p class="deck-set-content-title">{% trans 'Delete Deck' %}</p>
+                <p class="deck-set-content-text">
+                    {% trans 'Warning! Deck will be removed along with all its flashcards.' %}</p>
+                <div class="deck-set-delete create-add">
+                    <button type="submit" class="btn deck-set-btn"
+                        id="deck-set-delete-deck">{% trans "Delete" %}</button>
+                </div>
+            </div>
+            <div class="deck-set-content">
+                <p class="deck-set-content-title">{% trans 'Rename Deck' %}</p>
+                <p class="deck-set-content-text">
+                    {% trans 'Enter new name for this deck and click CHANGE.' %}</p>
+                <div class="input-div">
+                    <div class="div">
+                        <h5>{% trans "Enter new name for this deck" %}</h5>
+                        <input type="text" class="input deck-settings-change-name">
+                    </div>
+                </div>
+                <div class="required-name-error required-name-hide">
+                    <span>{% trans "The Name field is required." %}</span>
+                </div>
+                <div class="deck-set-change create-add">
+                    <button type="submit" class="btn deck-set-btn"
+                        id="deck-set-change-name">{% trans "Change" %}</button>
+                </div>
+            </div>
+            <div class="deck-set-content">
+                <p class="deck-set-content-title">{% trans "Change Deck's tags" %}</p>
+                <p class="deck-set-content-text">
+                    {% trans 'Enter new tags for this deck. Maximum 5 tags separated by commas.' %}</p>
+                <div class="input-div">
+                    <div class="div">
+                        <h5>{% trans "Maximum 5 tags separated by commas" %}</h5>
+                        <input type="text" class="input deck-settings-change-tags">
+                    </div>
+                </div>
+                <div class="deck-set-change create-add">
+                    <button type="submit" class="btn deck-set-btn"
+                        id="deck-set-change-tags">{% trans "Change" %}</button>
+                </div>
+            </div>
+            {% include 'mainContent/importTextFiles.html' %}
+        </div>
+    </div>
+</div>

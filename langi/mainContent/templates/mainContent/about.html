@@ -1,0 +1,51 @@
+{% extends 'mainContent/layout.html' %}
+{% load static %}
+{% load sass_tags %}
+
+{% load i18n %}
+{% load widget_tweaks %}
+
+{% block title %}About{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% sass_src 'mainContent/css/slick.scss' %}">
+<link rel="stylesheet" type="text/css" href="{% sass_src 'mainContent/css/home.scss' %}">
+<link rel="stylesheet" type="text/css" href="{% sass_src 'mainContent/css/slickHandle.scss' %}">
+<link rel="stylesheet" type="text/css" href="{% sass_src 'mainContent/css/about.scss' %}">
+{% endblock %}
+
+{% block content %}
+{% get_current_language as LANGUAGE_CODE %}
+
+{% include 'mainContent/tiles.html' %}
+
+<div class="decks-container">
+    <div class="about-content">
+        <h1>{% trans "Welcome to the LANGI Application" %}</h1>
+        <p>{% trans "Last updated: June 28, 2020" %}</p><br><br>
+        <p class="about-main-text">{% blocktrans %}
+            The langi web application was created for all users who wish to develop their language skills in a pleasant
+            and convenient way. The application allows you to view and learn the cards you have created using one of the
+            most popular
+            SRS (Spaced Repetition System) algorithms, SM-2. In addition, apart from the classic approach that
+            allows you to add new flashcards, the user also has the option of automatically creating word sets from the
+            imported files. The application supports both text document files as well as image files such as .png or
+            .jpg. The presence of mini-games, with the help of which the user can learn new words or expressions, also
+            contributes to pleasant learning. For the convenience of the user, the application supports 16 interface
+            languages ​​and two color modes. The "light" mode, which is the default mode, and the "dark" mode, which,
+            due to a number of tests, will certainly be better suited for night use of the application.
+            {% endblocktrans %}
+        </p><br>
+        <p class="about-main-text">{% blocktrans %}
+            The application was created with the use of Django technology and Django REST framework, as well as with the
+            help of the OpenCV (Open Source Computer Vision) library.
+            {% endblocktrans %}</p><br>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript" src="{% static 'mainContent/js/slick.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'mainContent/js/slickHandle.js' %}"></script>
+{% endblock %}

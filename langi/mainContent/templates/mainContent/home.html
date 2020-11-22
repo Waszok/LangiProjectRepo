@@ -1,0 +1,19 @@
+{% extends 'mainContent/layout.html' %}
+{% load static %}
+{% load sass_tags %}
+
+{% load i18n %}
+{% load widget_tweaks %}
+
+{% block title %}Home{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% sass_src 'mainContent/css/home.scss' %}">
+{% endblock %}
+
+{% block content %}
+{% get_current_language as LANGUAGE_CODE %}
+
+{% include 'mainContent/tiles.html' %}
+
+{% endblock %}

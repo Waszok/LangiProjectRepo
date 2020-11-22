@@ -1,0 +1,106 @@
+.common-select-deck {
+    z-index: 200;
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 200px;
+    height: 25px;
+    
+    background: var(--panel-color);
+    border: 2px solid #FFB02B;
+    
+    .common-selected-deck {
+        pointer-events: none;
+        border: none;
+        background-image: none;
+        background-color: transparent;
+        box-shadow: none;
+        width: 175px;
+        padding-left: 5px;
+        color: var(--text-color);
+        font-size: 16px;
+        font-weight: 500;
+        font-family: inherit;
+    }
+
+    .no-decks {
+        opacity: 0.5;
+    }
+}
+
+.common-open-list-btn {
+    width: 25px;
+    height: 25px;
+    border-left: 2px solid #FFB02B;
+  
+    a .arrow-deck-list {
+      width: 15px;
+      position: relative;
+      margin-top: 5px;
+      margin-left: 3px;
+    }
+
+    .arrow-deck-list-black {
+        display: block;
+    }
+
+    .arrow-deck-list-white {
+        display: none;
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.dark {
+    .arrow-deck-list-black {
+        display: none;
+    }
+
+    .arrow-deck-list-white {
+        display: block;
+    }
+}
+
+.common-select-deck ul {
+    display: none;
+    width: 175px;
+    list-style: none;
+    position: absolute;
+    background: var(--panel-color);
+    border: 2px solid #FFB02B;
+    border-top: none;
+    transform: translateY(50%) translateY(13px);
+    cursor: pointer;
+    max-height: 450px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    li {
+        justify-content: center;
+        align-items: center;
+        padding-left: 5px;
+        height: 20px;
+        width: 175px;
+        
+        p {
+          color: var(--text-color);
+          font-size: 13px;
+          font-weight: 500;
+        }
+
+        hr {
+            margin: 0 10px 0 0;
+            color: var(--navigation-color);
+        }
+    }
+
+    li:hover {
+        border-left: 4px solid #FFB02B;
+    }
+}
+
+.active-deck {
+    border-left: 4px solid #FFB02B;
+}

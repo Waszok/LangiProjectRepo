@@ -1,0 +1,148 @@
+{% extends 'mainContent/layout.html' %}
+{% load static %}
+{% load sass_tags %}
+
+{% load i18n %}
+{% load widget_tweaks %}
+
+{% block title %}Learn{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% sass_src 'mainContent/css/slick.scss' %}">
+<link rel="stylesheet" type="text/css" href="{% sass_src 'mainContent/css/home.scss' %}">
+<link rel="stylesheet" type="text/css" href="{% sass_src 'mainContent/css/slickHandle.scss' %}">
+<link rel="stylesheet" type="text/css" href="{% sass_src 'mainContent/css/learn.scss' %}">
+{% endblock %}
+
+{% block content %}
+{% get_current_language as LANGUAGE_CODE %}
+
+{% include 'mainContent/tiles.html' %}
+
+<div class="decks-container">
+    <div class="learn-header">
+        <div class="learn-header-top">
+            <div class="title">{% trans 'Learn' %}</div>
+            <span class="help-text">{% trans 'Select deck you want to learn. Good luck!' %}</span>
+        </div>
+        <div class="deck-selection-content">
+            <div class="deck-selection">
+                {% include 'mainContent/selectDeckList.html' %}
+            </div>
+        </div>
+    </div>
+
+    <div class="learn-body">
+        <div class="learn-flashcard">
+            <div class="front-back-text" id="learn-flashcard-front-text">{% trans "Front" %}</div>
+            <div class="front-back-text" id="learn-flashcard-back-text">{% trans "Back" %}</div>
+            <div class="extra-content">
+                <img class="show-img-audio" src="{% static 'mainContent/images/icons/plusTransparent.png' %}"
+                    onmouseover="IconHoverAddCard(this, 1);" onmouseout="IconUnhoverAddCard(this, 1);"></img>
+                <div class="img-and-audio">
+                    <img class="example-img" id="learn-example-img"></img>
+                    <audio id="flashcard-audio" type="audio/wav"></audio>
+                    <div class="flashcard-player" id="flashcard-player">
+                        <img class="player-img" src="{% static 'mainContent/images/speakerIcon.png' %}" alt="speaker">
+                        <div class="flashcard-player-time">0:00/0:00</div>
+                        <div class="player-btns">
+                            <div class="iconfont flashcard-play-pause icon-play"></div>
+                        </div>
+                        <div class="flashcard-player-progress"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="learn-flashcard-text" id="learn-flashcard-contentText-front">
+                <span style="text-decoration: underline;">Aslında <span style="color: rgb(244, 67, 54);">ne</span>
+                    yapacağımı <b>bilmiyorum</b></span>
+            </div>
+
+            <div class="learn-flashcard-text" id="learn-flashcard-contentText-back">
+                cos tam <b>AAAAAAAA</b>
+            </div>
+
+            <div class="learn-flashcard-sentences-container">
+                <img class="show-sentences" src="{% static 'mainContent/images/icons/plusTransparent.png' %}"
+                    onmouseover="IconHoverAddCard(this, 1);" onmouseout="IconUnhoverAddCard(this, 1);"></img>
+                <div class="learn-flashcard-sentences" id="learn-flashcard-sentences">
+                    <div class="learn-flashcard-sentence">How is it going? - How is your life going?
+                        How is it going? - How is your life going?
+                    </div>
+                    <hr>
+                    <div class="learn-flashcard-sentence">What have you been up to?</div>
+                    <hr>
+                    <div class="learn-flashcard-sentence">What have you been up to?</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="learn-flashcard-buttons">
+            <div class="buttons-front">
+                <div class="create-add learn-flashcard-btn" id="show-answer">
+                    <button class="btn">{% trans "Show answer" %}</button>
+                </div>
+            </div>
+            <div class="buttons-back">
+                <div class="create-add learn-flashcard-btn" id="learn-again" onclick="nextFlashcardProcess(1)">
+                    <button class="btn">{% trans "Again" %}</button>
+                </div>
+                <div class="create-add learn-flashcard-btn" id="learn-very-hard" onclick="nextFlashcardProcess(2)">
+                    <button class="btn">{% trans "Very hard" %}</button>
+                </div>
+                <div class="create-add learn-flashcard-btn" id="learn-hard" onclick="nextFlashcardProcess(3)">
+                    <button class="btn">{% trans "Hard" %}</button>
+                </div>
+                <div class="create-add learn-flashcard-btn" id="learn-medium" onclick="nextFlashcardProcess(4)">
+                    <button class="btn">{% trans "Medium" %}</button>
+                </div>
+                <div class="create-add learn-flashcard-btn" id="learn-easy" onclick="nextFlashcardProcess(5)">
+                    <button class="btn">{% trans "Easy" %}</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="learn-flashcard-side-panel">
+            <div class="learn-flashcard-shortcuts">
+                <span class="learn-flashcard-shortcut-text">{% trans "Use keyboard" %}</span>
+                <div class="learn-flashcard-shortcut">
+                    <span>{% trans "Flip:" %}</span>
+                    <img class="spacebar-icon" src="{% static 'mainContent/images/spacebarIcon.png' %}"></img>
+                </div>
+                <div class="learn-flashcard-shortcut">
+                    <span>{% trans "Next:" %}</span>
+                    <img class="spacebar-icon" src="{% static 'mainContent/images/nextIcon.png' %}"></img>
+                </div>
+                <div class="learn-flashcard-shortcut">
+                    <span>{% trans "Again:" %}</span>
+                    <span class="learn-flashcard-shortcut-number">1</span>
+                </div>
+                <div class="learn-flashcard-shortcut">
+                    <span>{% trans "Very hard:" %}</span>
+                    <span class="learn-flashcard-shortcut-number">2</span>
+                </div>
+                <div class="learn-flashcard-shortcut">
+                    <span>{% trans "Hard:" %}</span>
+                    <span class="learn-flashcard-shortcut-number">3</span>
+                </div>
+                <div class="learn-flashcard-shortcut">
+                    <span>{% trans "Medium:" %}</span>
+                    <span class="learn-flashcard-shortcut-number">4</span>
+                </div>
+                <div class="learn-flashcard-shortcut">
+                    <span>{% trans "Easy:" %}</span>
+                    <span class="learn-flashcard-shortcut-number">5</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript" src="{% static 'mainContent/js/slick.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'mainContent/js/slickHandle.js' %}"></script>
+<script type="text/javascript" src="{% static 'mainContent/js/learn.js' %}"></script>
+{% endblock %}

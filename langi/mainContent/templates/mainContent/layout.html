@@ -1,0 +1,284 @@
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% load mainContent.content_tags %}
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}{% endblock %}</title>
+        {% load sass_tags %}
+        {% load static %}
+        <!-- Own CSS files -->
+        <link rel="stylesheet" type="text/css" href="{% sass_src 'accounts/css/fonts.scss' %}">
+        <link rel="stylesheet" type="text/css" href="{% sass_src 'mainContent/css/mainContent.scss' %}">
+        <link rel="stylesheet" type="text/css" href="{% sass_src 'mainContent/css/createAddBtn.scss' %}">
+        <link rel="stylesheet" type="text/css" href="{% sass_src 'mainContent/css/inputFields.scss' %}">
+        <link rel="stylesheet" type="text/css" href="{% sass_src 'mainContent/css/addCard.scss' %}">
+        <link rel="stylesheet" type="text/css" href="{% sass_src 'mainContent/css/addDeck.scss' %}">
+        <link rel="stylesheet" type="text/css" href="{% sass_src 'mainContent/css/importFiles.scss' %}">
+        <link rel="stylesheet" type="text/css" href="{% sass_src 'mainContent/css/selectDeckList.scss' %}">
+        <link rel="stylesheet" type="text/css" href="{% sass_src 'mainContent/css/dictionary.scss' %}">
+        <link rel="stylesheet" type="text/css" href="{% sass_src 'mainContent/css/activity.scss' %}">
+
+        {% block css %}{% endblock %}
+
+        <!-- Social Media Icons -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.sound.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    </head>
+
+    <body onload="initializeMainContent('{{ LANGUAGE_CODE }}', '{{ user.profile.darkMode }}');">
+        <div class="container">
+            <nav class="navigation">
+                <div class="logo">
+                    <a href="{% url 'mainContent:home' %}"><img src="{% static 'accounts/images/LogoNameDark.png' %}"
+                            alt="Application logo"></a>
+                </div>
+                <ul class="menu">
+                    <form name="setLangEnglish" action="{% url 'set_language' %}" method="post" class="set-lang">
+                        {% csrf_token %}
+                        <input type="hidden" name="next" value="{{ redirect_to }}">
+                        <input type="hidden" name="language" value="en" id="lang-code" />
+                    </form>
+                    <li id="languageBtn" class="menu__item" onclick="langSelected('{{ LANGUAGE_CODE }}')">
+                        <div class="language-div">
+                            <svg class="menuIcon" style="width:24px;height:24px" viewBox="0 0 24 24">
+                                <path
+                                    d="M16.36,14C16.44,13.34 16.5,12.68 16.5,12C16.5,11.32 16.44,10.66 16.36,10H19.74C19.9,10.64 20,11.31 20,12C20,12.69 19.9,13.36 19.74,14M14.59,19.56C15.19,18.45 15.65,17.25 15.97,16H18.92C17.96,17.65 16.43,18.93 14.59,19.56M14.34,14H9.66C9.56,13.34 9.5,12.68 9.5,12C9.5,11.32 9.56,10.65 9.66,10H14.34C14.43,10.65 14.5,11.32 14.5,12C14.5,12.68 14.43,13.34 14.34,14M12,19.96C11.17,18.76 10.5,17.43 10.09,16H13.91C13.5,17.43 12.83,18.76 12,19.96M8,8H5.08C6.03,6.34 7.57,5.06 9.4,4.44C8.8,5.55 8.35,6.75 8,8M5.08,16H8C8.35,17.25 8.8,18.45 9.4,19.56C7.57,18.93 6.03,17.65 5.08,16M4.26,14C4.1,13.36 4,12.69 4,12C4,11.31 4.1,10.64 4.26,10H7.64C7.56,10.66 7.5,11.32 7.5,12C7.5,12.68 7.56,13.34 7.64,14M12,4.03C12.83,5.23 13.5,6.57 13.91,8H10.09C10.5,6.57 11.17,5.23 12,4.03M18.92,8H15.97C15.65,6.75 15.19,5.55 14.59,4.44C16.43,5.07 17.96,6.34 18.92,8M12,2C6.47,2 2,6.5 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
+                            </svg>
+                            <a href="#">{% trans 'Language' %}<i class="fa fa-sort-desc"></i></a>
+                        </div>
+                        <ul id="list-languages" class="submenu"
+                            langauge-change-url="{% url 'mainContent:change-language' %}">
+                            <li onclick="changeLanguage('de')" id="de" class='langfamily-ns'>
+                                <p>Deutsch</p>
+                            </li>
+                            <li onclick="changeLanguage('cs')" id="cs" class='langfamily-ns'>
+                                <p>Český</p>
+                            </li>
+                            <li onclick="changeLanguage('en')" id="en" class='langfamily-ns'>
+                                <p>English</p>
+                            </li>
+                            <li onclick="changeLanguage('es')" id="es" class='langfamily-ns'>
+                                <p>Español</p>
+                            </li>
+                            <li onclick="changeLanguage('fr')" id="fr" class='langfamily-ns'>
+                                <p>Français</p>
+                            </li>
+                            <li onclick="changeLanguage('it')" id="it" class='langfamily-ns'>
+                                <p>Italiano</p>
+                            </li>
+                            <li onclick="changeLanguage('lt')" id="lt" class='langfamily-ns'>
+                                <p>Lietuviškai</p>
+                            </li>
+                            <li onclick="changeLanguage('nl')" id="nl" class='langfamily-ns'>
+                                <p>Nederlands</p>
+                            </li>
+                            <li onclick="changeLanguage('pl')" id="pl" class='langfamily-ns'>
+                                <p>Polski</p>
+                            </li>
+                            <li onclick="changeLanguage('pt')" id="pt" class='langfamily-ns'>
+                                <p>Português</p>
+                            </li>
+                            <li onclick="changeLanguage('tr')" id="tr" class='langfamily-ns'>
+                                <p>Türkçe</p>
+                            </li>
+                            <li onclick="changeLanguage('ru')" id="ru" class='langfamily-ns'>
+                                <p>Русский</p>
+                            </li>
+                            <li onclick="changeLanguage('zh-tw')" id="zh-tw" class='langfamily-tc'>
+                                <p>繁體中文</p>
+                            </li>
+                            <li onclick="changeLanguage('ja')" id="ja" class='langfamily-jp'>
+                                <p>日本語</p>
+                            </li>
+                            <li onclick="changeLanguage('ko')" id="ko" class='langfamily-kr'>
+                                <p>한국어</p>
+                            </li>
+                            <li onclick="changeLanguage('el')" id="el" class='langfamily-ns'>
+                                <p>Ελληνικά</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu__item">
+                        <div class="theme-div">
+                            <!-- Moon icon -->
+                            <svg class="menuIcon moon" style="width:24px;height:24px" viewBox="0 0 24 24">
+                                <path d="M12 2A9.91 9.91 0 0 0 9 2.46A10 10 0 0 1 9 21.54A10 10 0 1 0 12 2Z" />
+                            </svg>
+                            <!-- Sun icon -->
+                            <svg class="menuIcon sun" style="width:24px;height:24px" viewBox="0 0 24 24">
+                                <path
+                                    d="M3.55,18.54L4.96,19.95L6.76,18.16L5.34,16.74M11,22.45C11.32,22.45 13,22.45 13,22.45V19.5H11M12,5.5A6,6 0 0,0 6,11.5A6,6 0 0,0 12,17.5A6,6 0 0,0 18,11.5C18,8.18 15.31,5.5 12,5.5M20,12.5H23V10.5H20M17.24,18.16L19.04,19.95L20.45,18.54L18.66,16.74M20.45,4.46L19.04,3.05L17.24,4.84L18.66,6.26M13,0.55H11V3.5H13M4,10.5H1V12.5H4M6.76,4.84L4.96,3.05L3.55,4.46L5.34,6.26L6.76,4.84Z" />
+                            </svg>
+
+                            <button class="toggle" id="themeToggle"
+                                theme-change-url="{% url 'mainContent:change-theme' %}">{% trans 'Theme' %}</button>
+                        </div>
+                    </li>
+                    <li class="menu__item">
+                        <div>
+                            <svg class="menuIcon" style="width:24px;height:24px" viewBox="0 0 24 24">
+                                <path
+                                    d="M13,9H11V7H13M13,17H11V11H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
+                            </svg>
+                            <a href="{% url 'mainContent:about' %}">{% trans 'About' %}</a>
+                        </div>
+                    </li>
+                    <li id="profileBtn" class="menu__item">
+                        <div>
+                            <svg class="menuIcon" style="width:24px;height:24px" viewBox="0 0 24 24">
+                                <path
+                                    d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" />
+                            </svg>
+                            <a href="#">{{ user.username|getUsername }} <i class="fa fa-sort-desc"></i></a>
+                        </div>
+                        <ul id="list-profile" class="submenu">
+                            <li data-activity-open="#activity-window">{% trans 'Activity' %}</li>
+                            <li><a href="{% url 'accounts:logout' %}">{% trans 'Logout' %}</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="burger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </nav>
+
+            <div class="contentArea">
+
+                {% block content %}
+                {% endblock %}
+
+                {% include 'mainContent/addCard.html' %}
+                {% include 'mainContent/addDeck.html' %}
+                {% include 'mainContent/importFiles.html' %}
+                {% include 'mainContent/dictionary.html' %}
+                {% include 'mainContent/activity.html' %}
+
+                <div id="overlay"></div>
+            </div>
+
+            <div class="bottom-info-container">
+                <div class="bottom-info">
+                    <div class="all-flashcards">
+                        <a href="#">
+                            <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                                <path fill="currentColor"
+                                    d="M13,20H11V8L5.5,13.5L4.08,12.08L12,4.16L19.92,12.08L18.5,13.5L13,8V20Z" />
+                            </svg>
+                            <p id="all-cards-number">0</p>
+                        </a>
+                    </div>
+                    <div class="today-flashcards">
+                        <a href="#">
+                            <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                                <path fill="currentColor"
+                                    d="M13,20H11V8L5.5,13.5L4.08,12.08L12,4.16L19.92,12.08L18.5,13.5L13,8V20Z" />
+                            </svg>
+                            <p id="today-cards-number">0</p>
+                        </a>
+                    </div>
+                    <div class="bottom-select-deck">
+                        <input type="text" name="selected-deck" class="bottom-selected-deck no-decks" value="no decks">
+                        <div class="open-list-deck-btn">
+                            <a id="open-list-deck">
+                                <img src="{% static 'mainContent/images/upArrowBlack.png' %}" id="arrow-deck-black"
+                                    onmouseover="hover()" onmouseout="unhover()">
+                                <img src="{% static 'mainContent/images/upArrowWhite.png' %}" id="arrow-deck-white"
+                                    onmouseover="hover()" onmouseout="unhover()">
+                                <img src="{% static 'mainContent/images/upArrowHighlight.png' %}"
+                                    id="arrow-deck-highlight" onmouseover="hover()" onmouseout="unhover()">
+                            </a>
+                        </div>
+
+                        <ul class="bottom-deck-list" style="display: none;">
+                            <li>
+                                <p>Deutsch</p>
+                                <hr class="bottom-deck-list-line">
+                            </li>
+                            <li>
+                                <p>Český</p>
+                                <hr class="bottom-deck-list-line">
+                            </li>
+                            <li>
+                                <p>English</p>
+                                <hr class="bottom-deck-list-line">
+                            </li>
+                            <li>
+                                <p>Español</p>
+                                <hr class="bottom-deck-list-line">
+                            </li>
+                            <li>
+                                <p>Français</p>
+                                <hr class="bottom-deck-list-line">
+                            </li>
+                            <li>
+                                <p>Italiano</p>
+                                <hr class="bottom-deck-list-line">
+                            </li>
+                            <li>
+                                <p>Raz</p>
+                                <hr class="bottom-deck-list-line">
+                            </li>
+                            <li>
+                                <p>Dwa</p>
+                                <hr class="bottom-deck-list-line">
+                            </li>
+                            <li>
+                                <p>Trzy</p>
+                                <hr class="bottom-deck-list-line">
+                            </li>
+                            <li>
+                                <p>Italiano</p>
+                                <hr class="bottom-deck-list-line">
+                            </li>
+                            <li>
+                                <p>Raz</p>
+                                <hr class="bottom-deck-list-line">
+                            </li>
+                            <li>
+                                <p>Dwa</p>
+                                <hr class="bottom-deck-list-line">
+                            </li>
+                            <li>
+                                <p>Ostatni</p>
+                                <hr class="bottom-deck-list-line">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            {% include 'accounts/footer.html' %}
+        </div>
+
+
+        <script type="text/javascript" src="{% static 'mainContent/js/main.js' %}"></script>
+        <script type="text/javascript" src="{% static 'mainContent/js/record.js' %}"></script>
+        <script type="text/javascript" src="{% static 'mainContent/js/audioPlayer.js' %}"></script>
+        <script type="text/javascript" src="{% static 'mainContent/js/addCard.js' %}"></script>
+        <script type="text/javascript" src="{% static 'mainContent/js/addDeck.js' %}"></script>
+        <script type="text/javascript" src="{% static 'mainContent/js/importFiles.js' %}"></script>
+        <script type="text/javascript" src="{% static 'mainContent/js/selectDeckList.js' %}"></script>
+        <script type="text/javascript" src="{% static 'mainContent/js/loadTextFile.js' %}"></script>
+        <script type="text/javascript" src="{% static 'mainContent/js/loadImageFiles.js' %}"></script>
+        <script type="text/javascript" src="{% static 'mainContent/js/styleTextInTextArea.js' %}"></script>
+        <script type="text/javascript" src="{% static 'mainContent/js/addCardRequest.js' %}"></script>
+        <script type="text/javascript" src="{% static 'mainContent/js/getFlashcards.js' %}"></script>
+        <script type="text/javascript" src="{% static 'mainContent/js/dictionary.js' %}"></script>
+        <script type="text/javascript" src="{% static 'mainContent/js/activity.js' %}"></script>
+
+        {% block js %}
+        {% endblock %}
+    </body>
+
+</html>

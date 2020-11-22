@@ -1,0 +1,21 @@
+{% load i18n %}
+{% load static %}
+
+<div class="dictionary-window" id="dictionary-window">
+    <div class="add-header dictionary-header">
+        <div class="add-header-top dictionary-header-top">
+            <div class="title">{% trans "Dictionary" %}</div>
+            <button data-dict-close class="close-btn">&times;</button>
+        </div>
+    </div>
+    <div class="body-and-select-container">
+        <div class="dict-deck-selection-content">
+            <div class="deck-selection">
+                {% include 'mainContent/selectDeckList.html' %}
+            </div>
+        </div>
+        <div class="dictionary-body">
+            <div id="dict-content" class="dict-content"></div>
+        </div>
+    </div>
+</div>

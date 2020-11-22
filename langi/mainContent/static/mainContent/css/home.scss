@@ -1,0 +1,109 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////---------------- TILES ---------------//////////////////////////////////////
+.tiles {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column: 2 / span 1;
+    grid-gap: 40px;
+    align-items: center;
+
+    a {
+        text-decoration: none;
+        color: var(--text-color);
+    }
+
+    .tile {
+        padding: 20px;
+        border: 1px solid var(--tile-border);
+        box-shadow: 2px 2px 6px 0 #25313F;
+        text-align: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        transition: all 0.3s ease 0s;
+        text-transform: uppercase;
+        white-space: nowrap;
+        position: relative;
+
+        background-image: linear-gradient(var(--tile-gradient-color-1),var(--tile-gradient-color-2));
+
+        img {
+            width: 50px;
+            height: auto;
+        }
+
+        &__title {
+            padding: 50px 30px 0px;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .line {
+            width: 120px;
+            height: 2px;
+            margin-top: 80px;
+            background-color: var(--text-color);
+            position: absolute;
+        }
+    }
+}
+
+.tile:hover {
+    transform: translateY(-6px);
+
+    .line {
+        background-color: var(--highlight-color);
+    }
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////--------------MEDIA QUERIES-------------////////////////////////////////////
+@media screen and (max-width: 1286px) {
+    .tiles {
+        grid-template-columns: repeat(12, 1fr);
+        grid-gap: 60px;
+        grid-column: 2 / span 12 / 1;
+
+        a {
+            grid-column: span 4;
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {    
+    .tiles {
+        grid-template-columns: repeat(12, 1fr);
+        grid-gap: 60px;
+        grid-column: 2 / span 12 / 1;
+
+        a {
+            grid-column: span 6;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .tiles {
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 60px;
+        grid-column: 2 / span 4 / 1;
+
+        a {
+            grid-column: span 4;
+        }
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .tiles {
+        grid-template-columns: repeat(6, 1fr);
+        grid-gap: 60px;
+        grid-column: 2 / span 6 / 1;
+
+        a {
+            grid-column: span 4;
+        }
+    }
+}

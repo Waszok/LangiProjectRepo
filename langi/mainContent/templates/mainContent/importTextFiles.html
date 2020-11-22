@@ -1,0 +1,103 @@
+{% load i18n %}
+{% load static %}
+
+<div class="deck-set-content">
+    <p class="deck-set-content-title">{% trans "Import from text file" %}</p>
+    <p class="deck-set-content-text">
+        {% trans 'Add text file into box field located underneath. Accepted file formats are .txt, .docx. In the field on the right side enter a proper flashcard separator.' %}
+    </p>
+    <div class="drop-file-zone-container">
+        <div class="drop-file-zone">
+            <span class="drop-file-zone__prompt">{% trans 'Drop file here or click to upload' %}</span>
+            <!--<span class="drop-file-zone__error">{% trans 'Invalid file format' %}</span>-->
+            <!--<div class="drop-file-zone__thumb" data-img-label="myImg.png"></div>-->
+            <input type="file" name="textFile" class="drop-file-zone__input">
+        </div>
+        <div class="input-div">
+            <div class="div">
+                <h5>{% trans 'Separator' %}</h5>
+                <input id="separator" type="text" class="input">
+            </div>
+        </div>
+    </div>
+    <div class="deck-set-change create-add">
+        <button id="importTxtFileBtn" class="btn deck-set-btn" onclick="importTextFile()"
+            import-textfile-url="{% url 'mainContent:import-textFile' %}">{% trans "Import" %}</button>
+    </div>
+    <div class="deck-set-im-list-container">
+        <div class="dect-set-im-header">
+            <div class="deck-set-im-header-front">{% trans "Front" %}</div>
+            <svg id="swap-img" class="swap-img" x="0px" y="0px" viewBox="0 0 384 384"
+                style="enable-background:new 0 0 384 384;">
+                <g>
+                    <polygon
+                        points="85.12,170.667 0,256 85.12,341.333 85.12,277.333 234.667,277.333 234.667,234.667 85.12,234.667 			" />
+                    <polygon
+                        points="384,128 298.88,42.667 298.88,106.667 149.333,106.667 149.333,149.333 298.88,149.333 298.88,213.333 			" />
+                </g>
+            </svg>
+            <div class="deck-set-im-header-front">{% trans "Back" %}</div>
+        </div>
+        <div id="dect-set-im-list-elements-container" class="dect-set-im-list-elements-container">
+        </div>
+    </div>
+    <div class="deck-set-save deck-set-change create-add">
+        <button type="submit" id="deck-set-save-btn"
+            class="deck-set-save-btn btn deck-set-btn">{% trans "Save" %}</button>
+    </div>
+</div>
+<div class="deck-set-content">
+    <p class="deck-set-content-title">{% trans "Import from image file" %}</p>
+    <p class="deck-set-content-text">
+        {% trans 'Add image file into box field located underneath. Accepted file formats are .png, .jpg, .jpeg. Mark proper checkboxes for better extraction result.' %}
+    </p>
+    <div class="drop-file-img-zone-container">
+        <div class="drop-file-img-zone">
+            <span class="drop-file-img-zone__prompt">{% trans 'Drop file here or click to upload' %}</span>
+            <!--<span class="drop-file-img-zone__error">{% trans 'Invalid file format' %}</span>-->
+            <!--<div class="drop-file-img-zone__thumb" data-img-label="myImg.png"></div>-->
+            <input type="file" name="textFile" class="drop-file-img-zone__input">
+        </div>
+
+        <div class="checkboxes">
+            <div class="checkbox-wrapper">
+                <!--<input type="checkbox" id="paper-edges-checkbox" hidden>-->
+                <input type="checkbox" name="paperEdgesCheckbox" id="paper-edges-checkbox" hidden>
+                <label for="paper-edges-checkbox" class="checkmark" id="paper-edges-label"></label>
+                <span class="checkbox-text">{% trans "The photo shows all corners of the paper." %}</span>
+            </div>
+
+            <div class="checkbox-wrapper">
+                <!--<input type="checkbox" id="paper-checkered" hidden>-->
+                <input type="checkbox" name="paperCheckered" id="paper-checkered" hidden>
+                <label for="paper-checkered" class="checkmark" id="paper-checkered-label"></label>
+                <span class="checkbox-text">{% trans "The checkered paper was used." %}</span>
+            </div>
+        </div>
+    </div>
+    <div class="deck-set-change create-add">
+        <button id="importImgFileBtn" class="btn deck-set-btn" onclick="importImageFile()"
+            import-imgfile-url="{% url 'mainContent:import-imgFile' %}">{% trans "Import" %}</button>
+    </div>
+    <div class="deck-set-im-list-container">
+        <div class="dect-set-im-header">
+            <div class="deck-set-im-header-front">{% trans "Front" %}</div>
+            <svg id="swap-image-img" class="swap-img" x="0px" y="0px" viewBox="0 0 384 384"
+                style="enable-background:new 0 0 384 384;">
+                <g>
+                    <polygon
+                        points="85.12,170.667 0,256 85.12,341.333 85.12,277.333 234.667,277.333 234.667,234.667 85.12,234.667 			" />
+                    <polygon
+                        points="384,128 298.88,42.667 298.88,106.667 149.333,106.667 149.333,149.333 298.88,149.333 298.88,213.333 			" />
+                </g>
+            </svg>
+            <div class="deck-set-im-header-front">{% trans "Back" %}</div>
+        </div>
+        <div id="dect-set-image-list-elements-container" class="dect-set-im-list-elements-container">
+        </div>
+    </div>
+    <div class="deck-set-save deck-set-change create-add">
+        <button type="submit" id="deck-set-image-save-btn"
+            class="deck-set-save-btn btn deck-set-btn">{% trans "Save" %}</button>
+    </div>
+</div>

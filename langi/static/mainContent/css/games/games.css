@@ -1,0 +1,119 @@
+.restart-game-window,
+.start-game-window {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  border: 3px solid var(--border-button-color);
+  box-shadow: 2px 2px 6px 0 #25313F;
+  background-color: var(--panel-color);
+  z-index: 200;
+  min-width: 250px;
+  max-width: 80%;
+  height: 70px; }
+  .restart-game-window .restart-game-header,
+  .restart-game-window .start-game-header,
+  .start-game-window .restart-game-header,
+  .start-game-window .start-game-header {
+    display: flex;
+    justify-content: center; }
+    .restart-game-window .restart-game-header .title,
+    .restart-game-window .start-game-header .title,
+    .start-game-window .restart-game-header .title,
+    .start-game-window .start-game-header .title {
+      font-size: 20px;
+      font-weight: 400; }
+
+.restart-game-window.active,
+.start-game-window.active {
+  transform: translate(-50%, -50%) scale(1); }
+
+.contentArea {
+  grid-template-columns: 70px 200px auto 100px 70px;
+  margin-top: 50px;
+  padding: 60px 0 0; }
+
+.games-header {
+  margin-top: -25px;
+  display: flex;
+  justify-content: center;
+  text-align: center; }
+  .games-header .games-header-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center; }
+    .games-header .games-header-top .title {
+      font-size: 18px;
+      font-weight: 400;
+      margin-right: 10px; }
+    .games-header .games-header-top .help-text {
+      font-size: 14px;
+      font-weight: 400; }
+  .games-header .deck-selection-content {
+    position: relative;
+    z-index: 10; }
+    .games-header .deck-selection-content .deck-selection {
+      position: absolute;
+      margin-left: 100px;
+      margin-top: 45px; }
+
+.games-headings {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .games-headings .gameCard {
+    position: relative;
+    margin-top: 10px;
+    max-width: 200px;
+    height: 35px;
+    border: 1px solid var(--tile-border);
+    box-shadow: 2px 2px 6px 0 var(--text-color);
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition: linear 0.4s ease-in-out 0s;
+    background-image: linear-gradient(var(--tile-gradient-color-1), var(--tile-gradient-color-2));
+    cursor: pointer; }
+    .games-headings .gameCard__title {
+      padding: 5px 30px 0px;
+      font-size: 18px;
+      font-weight: 500; }
+  .games-headings .snakeCard {
+    margin-right: 50px; }
+  .games-headings .gameCard:hover,
+  .games-headings .gameCard:focus {
+    background-image: none;
+    background-color: var(--highlight-color); }
+  .games-headings .game-active {
+    background-image: none;
+    background-color: var(--highlight-color);
+    box-shadow: 0 1px 0 var(--text-color); }
+
+.dark .gameCard {
+  box-shadow: 2px 0 3px 0 var(--text-color); }
+
+.dark .gameCard:hover,
+.dark .gameCard:focus {
+  color: var(--navigation-color); }
+
+.dark .game-active {
+  color: var(--navigation-color);
+  box-shadow: 0 1px 0 var(--text-color); }
+
+.games-contents {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .games-contents .games-content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    width: 90%;
+    height: 60vmin; }
+
+/*# sourceMappingURL=games.css.map */

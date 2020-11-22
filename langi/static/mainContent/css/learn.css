@@ -1,0 +1,133 @@
+.contentArea {
+  grid-template-columns: 70px 200px auto 100px 70px;
+  padding: 60px 0 0;
+  margin-top: 50px; }
+
+.learn-header {
+  margin-top: -15px;
+  display: flex;
+  justify-content: center;
+  text-align: center; }
+  .learn-header .learn-header-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center; }
+    .learn-header .learn-header-top .title {
+      font-size: 18px;
+      font-weight: 400;
+      margin-right: 10px; }
+    .learn-header .learn-header-top .help-text {
+      font-size: 14px;
+      font-weight: 400; }
+  .learn-header .deck-selection-content {
+    position: relative;
+    z-index: 10; }
+    .learn-header .deck-selection-content .deck-selection {
+      position: absolute;
+      margin-left: 100px; }
+
+.learn-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .learn-body .front-back-text {
+    margin-left: -20px;
+    font-size: 18px;
+    font-weight: 400; }
+  .learn-body .extra-content {
+    display: flex; }
+    .learn-body .extra-content .img-and-audio {
+      display: flex; }
+      .learn-body .extra-content .img-and-audio .player {
+        background-color: transparent; }
+    .learn-body .extra-content .flashcard-hide {
+      display: none; }
+    .learn-body .extra-content .show-img-audio {
+      width: 20px;
+      height: 20px;
+      margin-left: -20px;
+      margin-right: 10px; }
+    .learn-body .extra-content .example-img {
+      width: 200px;
+      height: 200px; }
+  .learn-body .learn-flashcard-text {
+    font-size: 20px;
+    margin-top: 10px;
+    word-wrap: break-word;
+    width: 500px;
+    overflow-y: scroll;
+    margin-left: 10px; }
+  .learn-body .learn-falshcard-im {
+    width: 450px; }
+  .learn-body .learn-flashcard-sentences-container {
+    display: flex; }
+    .learn-body .learn-flashcard-sentences-container .show-sentences {
+      margin-top: 20px;
+      width: 20px;
+      height: 20px;
+      margin-left: -20px;
+      margin-right: 10px; }
+    .learn-body .learn-flashcard-sentences-container .sentences-hide {
+      display: none; }
+    .learn-body .learn-flashcard-sentences-container .learn-flashcard-sentences {
+      margin-top: 20px;
+      word-wrap: break-word;
+      width: 500px;
+      max-height: 200px;
+      overflow-y: scroll; }
+      .learn-body .learn-flashcard-sentences-container .learn-flashcard-sentences .learn-flashcard-sentence {
+        font-size: 15px; }
+  .learn-body .learn-flashcard-buttons {
+    margin-top: 20px;
+    justify-content: flex-end; }
+    .learn-body .learn-flashcard-buttons .learn-flashcard-btn {
+      position: relative;
+      min-width: 95px;
+      border: 2px solid var(--border-button-color);
+      padding: 10px; }
+      .learn-body .learn-flashcard-buttons .learn-flashcard-btn .btn {
+        font-size: 12px; }
+    .learn-body .learn-flashcard-buttons .buttons-back {
+      display: flex; }
+      .learn-body .learn-flashcard-buttons .buttons-back #learn-again {
+        margin-right: 5px; }
+      .learn-body .learn-flashcard-buttons .buttons-back #learn-very-hard {
+        margin-right: 5px; }
+      .learn-body .learn-flashcard-buttons .buttons-back #learn-hard {
+        margin-right: 5px; }
+      .learn-body .learn-flashcard-buttons .buttons-back #learn-medium {
+        margin-right: 5px; }
+  .learn-body .unactive-player {
+    opacity: 0.5; }
+
+.learn-flashcard-side-panel {
+  position: absolute;
+  top: 150px;
+  right: 300px; }
+  .learn-flashcard-side-panel .learn-flashcard-counter {
+    font-size: 14px;
+    font-weight: 400; }
+  .learn-flashcard-side-panel .learn-flashcard-shortcuts {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px; }
+    .learn-flashcard-side-panel .learn-flashcard-shortcuts .learn-flashcard-shortcut {
+      display: flex;
+      align-items: center; }
+      .learn-flashcard-side-panel .learn-flashcard-shortcuts .learn-flashcard-shortcut img {
+        margin-left: 5px; }
+    .learn-flashcard-side-panel .learn-flashcard-shortcuts .learn-flashcard-shortcut-text {
+      font-size: 16px; }
+    .learn-flashcard-side-panel .learn-flashcard-shortcuts .learn-flashcard-shortcut-number {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--highlight-color); }
+    .learn-flashcard-side-panel .learn-flashcard-shortcuts span {
+      font-size: 14px;
+      font-weight: 400; }
+    .learn-flashcard-side-panel .learn-flashcard-shortcuts .spacebar-icon {
+      width: 60px; }
+
+/*# sourceMappingURL=learn.css.map */

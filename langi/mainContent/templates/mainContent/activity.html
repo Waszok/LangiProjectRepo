@@ -1,0 +1,28 @@
+{% load i18n %}
+{% load static %}
+
+<div class="activity-window" id="activity-window">
+    <div class="add-header activity-header">
+        <div class="add-header-top activity-header-top">
+            <div class="title">{% trans "Activity" %}</div>
+            <button data-activity-close class="close-btn">&times;</button>
+        </div>
+    </div>
+    <div class="body-and-select-container">
+        <div class="activity-deck-selection-content">
+            <div class="deck-selection">
+                {% include 'mainContent/selectDeckList.html' %}
+            </div>
+        </div>
+        <div class="activity-body">
+            <div id="today-activity-content" class="activity-content">
+                <div class="activity-text">
+                    {% trans 'All' %}
+                </div>
+                <canvas id="today-dif-chart"></canvas>
+                <canvas id="today-games-chart"></canvas>
+            </div>
+            <div id="activity-words-content" class="activity-words-content"></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,129 @@
+//Dictionary main window
+.activity-window {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+
+    //border
+    border: 3px solid var(--border-button-color);
+    box-shadow: 2px 2px 6px 0 #25313F;
+    background-color: var(--panel-color);
+
+    z-index: 200;
+
+    min-width: 600px;
+    max-width: 80%;
+}
+
+.activity-window.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.body-and-select-container {
+    max-height: 450px;
+    overflow-y: scroll;
+
+    //Select deck list area
+    .activity-deck-selection-content {
+        position: relative;
+
+        .deck-selection {
+            position: absolute;
+            right: 20px;
+        }
+    }
+}
+
+//Dictionary body
+.activity-body {
+    //max-height: 450px;
+    //overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 40px;
+
+    .activity-content {
+        padding: 0 50px;
+        canvas {
+            //padding: 0 30px;
+            width: 300px;
+            margin: 0 auto;
+        }
+        //display: inherit;
+        //justify-content: center;
+        //align-items: center;
+
+        .activity-text {
+            font-size: 18px;
+            font-weight: 500;
+        }
+    }
+
+    .activity-words-content {
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-top: 40px;
+        width: 500px;
+    
+        .activity-content-ele-container {
+            width: inherit;
+          
+            .activity-content-list-line {
+                margin: 5px;
+                width: 100%;
+                height: 2px;
+                background-color: var(--border-button-color);
+            }
+          
+            .activity-content-list-ele {
+              width: inherit;
+              display: flex;
+              padding: 0 5px 0 5px;
+              font-size: 12px;
+              font-weight: 400;
+              justify-content: center;
+            
+              .content-front-ele,
+              .content-back-ele {
+                  p {
+                      overflow-wrap: break-word;
+                      word-wrap: break-word;
+                      hyphens: auto;
+                  }
+                  
+                  display: flex;
+                  justify-content: center;
+                  width: 43%;
+          
+                  .content-front-box,
+                  .content-back-box {
+                      display: inline;
+                  }
+              }
+            
+              .content-ele-separator {
+                  display: flex;
+                  justify-content: center;
+                  width: 5%;
+              }
+            
+              .content-ele-separator::after {
+                  content: '';
+                  position: relative;
+                  width: 2px;
+                  height: 100%;
+                  background: var(--border-button-color);
+                  font-size: 12px;
+                  text-align: center;
+              }
+            }
+          }
+    }
+}
+

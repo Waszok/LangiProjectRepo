@@ -1,0 +1,66 @@
+{% load i18n %}
+{% load static %}
+<section class="tiles" id="tiles">
+    <a href="{% url 'mainContent:decks' %}">
+        <div class="tile decksOrangeTransparent" onmouseover="IconHover(this);" onmouseout="IconUnhover(this);">
+            <img src="{% static 'mainContent/images/icons/decksTransparent.png' %}" alt="">
+            <div class="line"></div>
+            <p class="tile__title">{% trans 'Decks' %}</p>
+        </div>
+    </a>
+
+
+    <a role="button" data-addcard-open="#add-card-window">
+        <div class="tile addCardOrangeTransparent" onmouseover="IconHover(this);" onmouseout="IconUnhover(this);">
+            <img src="{% static 'mainContent/images/icons/addCardTransparent.png' %}" alt="">
+            <div class="line"></div>
+            <p class="tile__title">{% trans 'Add Card' %}</p>
+        </div>
+    </a>
+
+
+    <a href="{% url 'mainContent:learn' %}">
+        <div class="tile learnOrangeTransparent" onmouseover="IconHover(this);" onmouseout="IconUnhover(this);">
+            <img src="{% static 'mainContent/images/icons/learnTransparent.png' %}" alt="">
+            <div class="line"></div>
+            <p class="tile__title">{% trans 'Learn' %}</p>
+        </div>
+    </a>
+
+    <a role="button" data-dict-open="#dictionary-window">
+        <div class="tile dictionaryOrangeTransparent" onmouseover="IconHover(this);" onmouseout="IconUnhover(this);">
+            <img src="{% static 'mainContent/images/icons/dictionaryTransparent.png' %}" alt="">
+            <div class="line"></div>
+            <p class="tile__title">{% trans 'Dictionary' %}</p>
+        </div>
+    </a>
+
+    <a href="{% url 'mainContent:games' %}">
+        <div class="tile gamesOrangeTransparent" onmouseover="IconHover(this);" onmouseout="IconUnhover(this);">
+            <img src="{% static 'mainContent/images/icons/gamesTransparent.png' %}" alt="">
+            <div class="line"></div>
+            <p class="tile__title">{% trans 'Games' %}</p>
+        </div>
+    </a>
+
+
+    <a role="button" data-activity-open="#activity-window">
+        <div class="tile activityOrangeTransparent" onmouseover="IconHover(this);" onmouseout="IconUnhover(this);">
+            <img src="{% static 'mainContent/images/icons/activityTransparent.png' %}" alt="">
+            <div class="line"></div>
+            <p class="tile__title">{% trans 'Activity' %}</p>
+        </div>
+    </a>
+
+
+    <a role="button" data-import-files-open="#import-files-window">
+        <div class="tile importOrangeTransparent" onmouseover="IconHover(this);" onmouseout="IconUnhover(this);">
+            <img src="{% static 'mainContent/images/icons/importTransparent.png' %}" alt="">
+            <div class="line"></div>
+            <p class="tile__title">{% trans 'Import' %}</p>
+        </div>
+    </a>
+
+
+
+</section>

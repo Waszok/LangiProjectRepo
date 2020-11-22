@@ -1,0 +1,39 @@
+{% load i18n %}
+<footer class="footer">
+    <div class="footer__sources sources">
+        <p class="sources-text">{% trans "Sources" %}</p>
+        <p class="sources-link">
+            {% with '<a class="link-privacy" href="https://www.flaticon.com/" title="Flaticon">' as link_begin %}
+            {% with "</a>" as link_end %}
+            {% blocktrans %}Icons made by Freepik from
+            {{ link_begin }}www.flaticon.com{{ link_end }}{% endblocktrans %}
+            {% endwith %}
+            {% endwith %}
+        </p>
+        <p class="sources-link">
+            {% with '<a class="link-privacy" href="https://www.flaticon.com/" title="Flaticon">' as link_begin %}
+            {% with "</a>" as link_end %}
+            {% blocktrans %}Icons made by Roundicons from
+            {{ link_begin }}www.flaticon.com{{ link_end }}{% endblocktrans %}
+            {% endwith %}
+            {% endwith %}
+        </p>
+    </div>
+    <div class="footer__contact-info contact-info">
+        <p class="contact-text">{% trans "Contact"  %}</p>
+        <p class="contact-email">{% trans "email: kamilwaszewski@gmail.com" %}</p>
+        <div class="social-media-icons">
+            <ul class="media-list">
+                <li><a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="https://www.linkedin.com/"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="https://www.youtube.com"><i class="fa fa-youtube"></i></a></li>
+                <li><a href="https://www.instagram.com"><i class="fa fa-instagram"></i></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer__privacy">
+        <a class="link-privacy" href="{% url 'accounts:privacy' %}">{% trans "Privacy Policy"  %}</a>
+        <a class="link-privacy" href="{% url 'accounts:terms' %}">{% trans " Terms &amp; Conditions" %}</a>
+        <p>&copy; 2020 Langi Application</p>
+    </div>
+</footer>

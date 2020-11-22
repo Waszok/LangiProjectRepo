@@ -1,0 +1,80 @@
+.drag-drop-board {
+  position: relative;
+  background-color: var(--snake-board-color);
+  width: 60vmin;
+  height: 60vmin;
+  left: calc(50% - 30vmin);
+  border: 2px solid var(--snake-board-border); }
+
+.drag-drop-board-content {
+  position: relative;
+  display: flex;
+  justify-content: center; }
+
+.draggable-elements,
+.droppable-elements {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 30px; }
+  .draggable-elements .draggable,
+  .draggable-elements .droppable,
+  .droppable-elements .draggable,
+  .droppable-elements .droppable {
+    background-color: white;
+    margin-bottom: 10px;
+    width: 150px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--drag-drop-text-color);
+    transition: opacity 0.2s; }
+  .draggable-elements .draggable,
+  .droppable-elements .draggable {
+    cursor: move;
+    border: 2px solid var(--drag-drop-text-color); }
+  .draggable-elements .draggable:hover,
+  .droppable-elements .draggable:hover {
+    opacity: 0.5; }
+  .draggable-elements .droppable,
+  .droppable-elements .droppable {
+    border: 2px solid #00aaff; }
+    .draggable-elements .droppable .droppable-img,
+    .droppable-elements .droppable .droppable-img {
+      pointer-events: none; }
+  .draggable-elements .droppable.droppable-hover,
+  .droppable-elements .droppable.droppable-hover {
+    border-width: 4px;
+    transform: scale(1.1); }
+  .draggable-elements .draggable.dragged,
+  .draggable-elements .droppable.dragged,
+  .droppable-elements .draggable.dragged,
+  .droppable-elements .droppable.dragged {
+    user-select: none;
+    opacity: 0.1;
+    cursor: default; }
+  .draggable-elements .droppable.dragged:hover,
+  .draggable-elements .draggable.dragged:hover,
+  .droppable-elements .droppable.dragged:hover,
+  .droppable-elements .draggable.dragged:hover {
+    opacity: 0.1; }
+
+.dragdrop-side-panel {
+  top: 0;
+  left: calc(50% + 31vmin);
+  position: absolute;
+  display: flex;
+  flex-direction: column; }
+  .dragdrop-side-panel .lifes .life-flag {
+    width: 40px;
+    height: 40px; }
+  .dragdrop-side-panel .dragdrop-score span {
+    font-size: 16px;
+    font-weight: 400; }
+  .dragdrop-side-panel .dragdrop-score .dragdrop-score-text {
+    font-size: 16px;
+    font-weight: 500; }
+
+/*# sourceMappingURL=dragAndDrop.css.map */

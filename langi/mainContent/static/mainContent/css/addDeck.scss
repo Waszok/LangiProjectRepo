@@ -1,0 +1,81 @@
+//Add deck main window
+.add-deck-window {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+
+    //border
+    border: 3px solid var(--border-button-color);
+    box-shadow: 2px 2px 6px 0 #25313F;
+    background-color: var(--panel-color);
+
+    z-index: 200;
+
+    min-width: 500px;
+    max-width: 80%;
+}
+
+.add-deck-window.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+//Add deck body
+.add-deck-body {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.add-deck-body .input-div{
+    position: relative;
+    padding: 5px 0;
+    width: 85%;
+    border-bottom: 2px solid var(--input-standard-color);
+}
+
+.deckname {
+    margin-bottom: 20px;
+}
+
+.required-error {
+    margin-top: 10px;
+    font-size: 12px;
+    color: var(--error-warning-color);
+}
+
+.required-hide {
+    display: none;
+}
+
+//Add deck buttons (add & cancel)
+.add-cancel {
+    position: absolute;
+    display: flex;
+    border: none;
+    background-color: none;
+    width: 100%;
+    height: 30px;
+    bottom: 0px;
+}
+
+.addDeck-btn-div {
+    position: relative;
+    width: 50%;
+    border-right: 3px solid var(--border-button-color);
+}
+.cancelDeck-btn-div {
+    position: relative;
+    width: 50%;
+}
+
+//BUTTON
+.btn{
+    border-top: none;
+    border-bottom: none;
+}

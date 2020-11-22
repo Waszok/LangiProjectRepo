@@ -1,0 +1,1186 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-19 21:13+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\accounts\forms.py:21
+msgid "User with this email address already exists."
+msgstr "Gebruiker met dit e-mailadres bestaat al."
+
+#: .\accounts\forms.py:30
+#, fuzzy
+#| msgid " Terms &amp; Conditions"
+msgid "You must accept the Terms & Conditions"
+msgstr " Algemene voorwaarden"
+
+#: .\accounts\forms.py:34 .\accounts\forms.py:40 .\accounts\forms.py:44
+#: .\accounts\forms.py:47 .\accounts\forms.py:101 .\accounts\forms.py:104
+msgid "All fields are required."
+msgstr "Alle velden zijn verplicht."
+
+#: .\accounts\forms.py:35
+msgid ""
+"Enter a valid username. This value may contain only letters, numbers, and "
+"@/./+/-/_ characters."
+msgstr ""
+"Voer een geldige gebruikersnaam in. Deze waarde mag alleen letters, cijfers "
+"en @ /. / + / - / _ tekens bevatten."
+
+#: .\accounts\forms.py:36
+msgid "The username cannot contain more than 150 characters."
+msgstr "De gebruikersnaam mag niet meer dan 150 tekens bevatten."
+
+#: .\accounts\forms.py:37
+msgid "A user with that username already exists."
+msgstr "Een gebruiker met die gebruikersnaam bestaat al."
+
+#: .\accounts\forms.py:41 .\accounts\forms.py:88
+msgid "Enter a valid email address."
+msgstr "Voer een geldig e-mailadres in."
+
+#: .\accounts\forms.py:51 .\accounts\forms.py:97
+msgid "The two password fields didn’t match."
+msgstr "De twee wachtwoordvelden komen niet overeen."
+
+#: .\accounts\forms.py:54
+msgid "Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only."
+msgstr ""
+"Verplicht. 150 tekens of minder. Alleen letters, cijfers en @ /. / + / - / _."
+
+#: .\accounts\forms.py:55 .\accounts\forms.py:107
+msgid ""
+"Your password can't be too similar to your other personal information. Your "
+"password must contain at least 8 characters. Your password can't be a "
+"commonly used password. Your password can't be entirely numeric."
+msgstr ""
+"Uw wachtwoord mag niet te veel lijken op uw andere persoonlijke gegevens. Uw "
+"wachtwoord moet minimaal 8 tekens bevatten. Uw wachtwoord mag geen algemeen "
+"gebruikt wachtwoord zijn.Uw wachtwoord mag niet volledig numeriek zijn."
+
+#: .\accounts\forms.py:69
+msgid "Please enter valid login details."
+msgstr "Voer geldige inloggegevens in."
+
+#: .\accounts\forms.py:77
+msgid "There is no user registered with the specified email address."
+msgstr "Er is geen gebruiker geregistreerd met het opgegeven e-mailadres."
+
+#: .\accounts\forms.py:87
+msgid "Please enter email address."
+msgstr "Voer een e-mailadres in."
+
+#: .\accounts\password_custom_validation.py:19
+#, python-format
+msgid ""
+"This password is too short. It must contain at least %(min_length)d "
+"character."
+msgid_plural ""
+"This password is too short. It must contain at least %(min_length)d "
+"characters."
+msgstr[0] "Dit wachtwoord is te kort. Het moet ten minste 1 teken bevatten."
+msgstr[1] "Dit wachtwoord is te kort. Het moet ten minste 8 tekens bevatten."
+
+#: .\accounts\password_custom_validation.py:29
+#, python-format
+msgid "Your password must contain at least %(min_length)d character."
+msgid_plural "Your password must contain at least %(min_length)d characters."
+msgstr[0] "Uw wachtwoord moet minimaal 1 teken bevatten."
+msgstr[1] "Uw wachtwoord moet minimaal 8 tekens bevatten."
+
+#: .\accounts\password_custom_validation.py:68
+#, python-format
+msgid "The password is too similar to the %(verbose_name)s."
+msgstr "Het wachtwoord lijkt te veel op de %(verbose_name)s."
+
+#: .\accounts\password_custom_validation.py:74
+msgid "Your password can't be too similar to your other personal information."
+msgstr ""
+"Uw wachtwoord mag niet te veel lijken op uw andere persoonlijke gegevens."
+
+#: .\accounts\password_custom_validation.py:102
+msgid "This password is too common."
+msgstr "Dit wachtwoord komt te vaak voor."
+
+#: .\accounts\password_custom_validation.py:107
+msgid "Your password can't be a commonly used password."
+msgstr "Uw wachtwoord mag geen algemeen gebruikt wachtwoord zijn."
+
+#: .\accounts\password_custom_validation.py:117
+msgid "This password is entirely numeric."
+msgstr "Dit wachtwoord is volledig numeriek."
+
+#: .\accounts\password_custom_validation.py:122
+msgid "Your password can't be entirely numeric."
+msgstr "Uw wachtwoord mag niet volledig numeriek zijn."
+
+#: .\accounts\templates\accounts\footer.html:4
+msgid "Sources"
+msgstr "Bronnen"
+
+#: .\accounts\templates\accounts\footer.html:8
+#, python-format
+msgid ""
+"Icons made by Freepik from\n"
+"            %(link_begin)swww.flaticon.com%(link_end)s"
+msgstr ""
+"Iconen gemaakt door Freepik van\n"
+"            %(link_begin)swww.flaticon.com%(link_end)s"
+
+#: .\accounts\templates\accounts\footer.html:16
+#, python-format
+msgid ""
+"Icons made by Roundicons from\n"
+"            %(link_begin)swww.flaticon.com%(link_end)s"
+msgstr ""
+"Iconen gemaakt door Roundicons van\n"
+"            %(link_begin)swww.flaticon.com%(link_end)s"
+
+#: .\accounts\templates\accounts\footer.html:23
+#: .\accounts\templates\accounts\privacy.html:201
+#: .\accounts\templates\accounts\terms.html:65
+msgid "Contact"
+msgstr "Contact"
+
+#: .\accounts\templates\accounts\footer.html:24
+msgid "email: kamilwaszewski@gmail.com"
+msgstr "email: kamilwaszewski@gmail.com"
+
+#: .\accounts\templates\accounts\footer.html:35
+#: .\accounts\templates\accounts\privacy.html:14
+msgid "Privacy Policy"
+msgstr "Privacy Policy"
+
+#: .\accounts\templates\accounts\footer.html:36
+msgid " Terms &amp; Conditions"
+msgstr " Algemene voorwaarden"
+
+#: .\accounts\templates\accounts\login.html:15
+msgid "Welcome"
+msgstr "Welkom"
+
+#: .\accounts\templates\accounts\login.html:22
+#: .\accounts\templates\accounts\signup.html:37
+msgid "Username"
+msgstr "Gebruikersnaam"
+
+#: .\accounts\templates\accounts\login.html:32
+#: .\accounts\templates\accounts\signup.html:63
+msgid "Password"
+msgstr "Wachtwoord"
+
+#: .\accounts\templates\accounts\login.html:37
+msgid "Forgot Password?"
+msgstr "Wachtwoord vergeten?"
+
+#: .\accounts\templates\accounts\login.html:56
+msgid "Login"
+msgstr "Aanmelden"
+
+#: .\accounts\templates\accounts\login.html:58
+msgid "Don't have an account?"
+msgstr "Heeft u geen account?"
+
+#: .\accounts\templates\accounts\login.html:59
+#: .\accounts\templates\accounts\signup.html:163
+msgid "Sign Up"
+msgstr "Inschrijven"
+
+#: .\accounts\templates\accounts\password_reset_complete.html:13
+msgid "Password reset complete."
+msgstr "Wachtwoord opnieuw instellen voltooid."
+
+#: .\accounts\templates\accounts\password_reset_complete.html:14
+msgid "Your new password has been set. You can log in now on the "
+msgstr "Uw nieuwe wachtwoord is ingesteld. U kunt nu inloggen op de "
+
+#: .\accounts\templates\accounts\password_reset_complete.html:15
+msgid "log in page"
+msgstr "login pagina"
+
+#: .\accounts\templates\accounts\password_reset_confirm.html:16
+msgid "Set a new password."
+msgstr "Stel een nieuw wachtwoord in."
+
+#: .\accounts\templates\accounts\password_reset_confirm.html:25
+#, fuzzy
+#| msgid "Password"
+msgid "New password"
+msgstr "Wachtwoord"
+
+#: .\accounts\templates\accounts\password_reset_confirm.html:40
+#: .\accounts\templates\accounts\signup.html:79
+msgid "Confirm Password"
+msgstr "Bevestig Wachtwoord"
+
+#: .\accounts\templates\accounts\password_reset_confirm.html:48
+#, fuzzy
+#| msgid "Confirm Password"
+msgid "Change my password"
+msgstr "Bevestig Wachtwoord"
+
+#: .\accounts\templates\accounts\password_reset_done.html:13
+msgid "Check your inbox."
+msgstr "Controleert Uw inbox."
+
+#: .\accounts\templates\accounts\password_reset_done.html:14
+msgid ""
+"We've emailed you instructions for setting your password. You should receive "
+"the email shortly."
+msgstr ""
+"We hebben u een e-mail gestuurd met instructies voor het instellen van uw "
+"wachtwoord. U ontvangt de e-mail binnenkort."
+
+#: .\accounts\templates\accounts\password_reset_form.html:14
+#, fuzzy
+#| msgid "Forgot Password?"
+msgid "Forgot your password?"
+msgstr "Wachtwoord vergeten?"
+
+#: .\accounts\templates\accounts\password_reset_form.html:15
+msgid ""
+"Enter your email address below, and we'll email instructions for setting a "
+"new one."
+msgstr ""
+"Voer hieronder uw e-mailadres in en we sturen u een e-mail met instructies "
+"voor het instellen van een nieuw adres."
+
+#: .\accounts\templates\accounts\password_reset_form.html:24
+#: .\accounts\templates\accounts\signup.html:53
+msgid "Email"
+msgstr "Email"
+
+#: .\accounts\templates\accounts\password_reset_form.html:37
+msgid "Send me instructions"
+msgstr "Stuur mij instructies"
+
+#: .\accounts\templates\accounts\privacy.html:15
+#: .\accounts\templates\accounts\terms.html:15
+msgid "Last updated: June 18, 2020"
+msgstr ""
+
+#: .\accounts\templates\accounts\privacy.html:16
+msgid "Personal data collected, and why!"
+msgstr ""
+
+#: .\accounts\templates\accounts\privacy.html:18
+msgid "Username you choose - This is how you are identified on the website"
+msgstr ""
+
+#: .\accounts\templates\accounts\privacy.html:19
+msgid "Password - this is how we confirm it's really you."
+msgstr ""
+
+#: .\accounts\templates\accounts\privacy.html:20
+msgid ""
+" Email - this is how you can recover your account. We do not require email "
+"validation, you\n"
+"            can feel free to\n"
+"            make this up if you wanted, just know you can't recover your "
+"account if so."
+msgstr ""
+
+#: .\accounts\templates\accounts\privacy.html:23
+msgid ""
+" Data relating to the entire learning process, including data on cards "
+"learned, decks\n"
+"            created, points earned\n"
+"            in mini-games, and any learning statistics."
+msgstr ""
+
+#: .\accounts\templates\accounts\privacy.html:27
+msgid "How long your data is retained:"
+msgstr ""
+
+#: .\accounts\templates\accounts\privacy.html:29
+msgid ""
+"All of the above data is retained indefinitely, unless otherwise requested "
+"in writing."
+msgstr ""
+
+#: .\accounts\templates\accounts\privacy.html:31
+msgid "Who we share your data with?"
+msgstr ""
+
+#: .\accounts\templates\accounts\privacy.html:33
+msgid ""
+" The data found under the above \"Personal data collected, and why!\" "
+"section is not shared\n"
+"            with any other\n"
+"            entities."
+msgstr ""
+
+#: .\accounts\templates\accounts\privacy.html:37
+msgid "Resuming the original privacy policy:"
+msgstr ""
+
+#: .\accounts\templates\accounts\privacy.html:39
+msgid ""
+" The Langi Application (\"The Service\") informs you of our policies "
+"regarding the collection, use\n"
+"        and disclosure of\n"
+"        Personal\n"
+"        Information when you use our Service."
+msgstr ""
+
+#: .\accounts\templates\accounts\privacy.html:44
+msgid ""
+"We will not use or share your information with anyone except as described in "
+"this Privacy Policy."
+msgstr ""
+
+#: .\accounts\templates\accounts\privacy.html:47
+msgid ""
+" We use your Personal Information for providing and improving the Service. "
+"By using the Service,\n"
+"        you agree\n"
+"        to the\n"
+"        collection and use of information in accordance with this policy. "
+"Unless otherwise defined in this\n"
+"        Privacy\n"
+"        Policy, terms used in this Privacy Policy have the same meanings as "
+"in our Terms and Conditions,\n"
+"        accessible at Langi Application website. "
+msgstr ""
+
+#: .\accounts\templates\accounts\privacy.html:55
+msgid "Information Collection And Use"
+msgstr ""
+
+#: .\accounts\templates\accounts\privacy.html:57
+msgid ""
+" While using our Service, we may ask you to provide us with certain "
+"personally identifiable\n"
+"        information\n"
+"        that can\n"
+"        be used to contact or identify you. Personally identifiable "
+"information may include, but is not limited\n"
+"        to, your\n"
+"        email address, name (\"Personal Information\")."
+msgstr ""
+
+#: .\accounts\templates\accounts\privacy.html:64
+msgid ""
+"We collect this information for the purpose of providing the Service, "
+"identifying and communicating with you."
+msgstr ""
+
+#: .\accounts\templates\accounts\privacy.html:68
+msgid "Log Data"
+msgstr ""
+
+#: .\accounts\templates\accounts\privacy.html:70
+msgid ""
+" We collect information that your browser sends whenever you visit our "
+"Service (\"Log Data\"). This\n"
+"        Log Data\n"
+"        may\n"
+"        include information such as your computer's Internet Protocol (\"IP"
+"\") address, browser type, browser\n"
+"        version, the\n"
+"        pages of our Service that you visit, the time and date of your "
+"visit, the time spent on those pages and\n"
+"        other\n"
+"        statistics."
+msgstr ""
+
+#: .\accounts\templates\accounts\privacy.html:79
+msgid "Cookies"
+msgstr ""
+
+#: .\accounts\templates\accounts\privacy.html:81
+msgid ""
+" Cookies are files with a small amount of data, which may include an "
+"anonymous unique identifier.\n"
+"        Cookies\n"
+"        are sent\n"
+"        to your browser from a web site and transferred to your device. We "
+"use cookies to collect information in\n"
+"        order\n"
+"        to improve our services for you."
+msgstr ""
+
+#: .\accounts\templates\accounts\privacy.html:88
+msgid ""
+" You can instruct your browser to refuse all cookies or to indicate when a "
+"cookie is being sent.\n"
+"        The Help\n"
+"        feature\n"
+"        on most browsers provide information on how to accept cookies, "
+"disable cookies or to notify you when\n"
+"        receiving a\n"
+"        new cookie."
+msgstr ""
+
+#: .\accounts\templates\accounts\privacy.html:95
+msgid ""
+" If you do not accept cookies, you may not be able to use some features of "
+"our Service and we\n"
+"        recommend\n"
+"        that you\n"
+"        leave them turned on."
+msgstr ""
+
+#: .\accounts\templates\accounts\privacy.html:100
+msgid "Do Not Track Disclosure"
+msgstr ""
+
+#: .\accounts\templates\accounts\privacy.html:102
+msgid ""
+"We do not support Do Not Track (\"DNT\"). Do Not Track is a preference you "
+"can set in your web\n"
+"        browser to\n"
+"        inform\n"
+"        websites that you do not want to be tracked."
+msgstr ""
+
+#: .\accounts\templates\accounts\privacy.html:107
+msgid ""
+"You can enable or disable Do Not Track by visiting the Preferences or "
+"Settings page of your web browser."
+msgstr ""
+
+#: .\accounts\templates\accounts\privacy.html:110
+msgid "Service Providers"
+msgstr ""
+
+#: .\accounts\templates\accounts\privacy.html:112
+msgid ""
+" We may employ third party companies and individuals to facilitate our "
+"Service, to provide the\n"
+"        Service on\n"
+"        our\n"
+"        behalf, to perform Service-related services and/or to assist us in "
+"analyzing how our Service is\n"
+"        used."
+msgstr ""
+
+#: .\accounts\templates\accounts\privacy.html:119
+msgid ""
+"These third parties have access to your Personal Information only to perform "
+"specific tasks on\n"
+"        our behalf\n"
+"        and are\n"
+"        obligated not to disclose or use your information for any other "
+"purpose."
+msgstr ""
+
+#: .\accounts\templates\accounts\privacy.html:124
+msgid "Compliance With Laws"
+msgstr ""
+
+#: .\accounts\templates\accounts\privacy.html:126
+msgid ""
+" We will disclose your Personal Information where required to do so by law "
+"or subpoena or if we\n"
+"        believe\n"
+"        that such\n"
+"        action is necessary to comply with the law and the reasonable "
+"requests of law enforcement or to protect\n"
+"        the\n"
+"        security or integrity of our Service."
+msgstr ""
+
+#: .\accounts\templates\accounts\privacy.html:133
+msgid "Security"
+msgstr ""
+
+#: .\accounts\templates\accounts\privacy.html:135
+msgid ""
+" The security of your Personal Information is important to us, and we strive "
+"to implement and\n"
+"        maintain\n"
+"        reasonable,\n"
+"        commercially acceptable security procedures and practices "
+"appropriate to the nature of the information\n"
+"        we store,\n"
+"        in order to protect it from unauthorized access, destruction, use, "
+"modification, or\n"
+"        disclosure."
+msgstr ""
+
+#: .\accounts\templates\accounts\privacy.html:143
+#, python-format
+msgid ""
+" However, please be aware that no method of transmission over the internet, "
+"or method of\n"
+"        electronic\n"
+"        storage is\n"
+"        100%% secure and we are unable to guarantee the absolute security of "
+"the Personal Information we have\n"
+"        collected\n"
+"        from you."
+msgstr ""
+
+#: .\accounts\templates\accounts\privacy.html:150
+msgid "International Transfer"
+msgstr ""
+
+#: .\accounts\templates\accounts\privacy.html:152
+msgid ""
+" Your information, including Personal Information, may be transferred to - "
+"and maintained on -\n"
+"        computers\n"
+"        located\n"
+"        outside of your state, province, country or other governmental "
+"jurisdiction where the data protection\n"
+"        laws may\n"
+"        differ than those from your jurisdiction."
+msgstr ""
+
+#: .\accounts\templates\accounts\privacy.html:159
+msgid ""
+" Your consent to this Privacy Policy followed by your submission of such "
+"information represents\n"
+"        your\n"
+"        agreement to\n"
+"        that transfer."
+msgstr ""
+
+#: .\accounts\templates\accounts\privacy.html:164
+msgid "Links To Other Sites"
+msgstr ""
+
+#: .\accounts\templates\accounts\privacy.html:166
+msgid ""
+" Our Service may contain links to other sites that are not operated by us. "
+"If you click on a\n"
+"        third party\n"
+"        link, you\n"
+"        will be directed to that third party's site. We strongly advise you "
+"to review the Privacy Policy of\n"
+"        every site\n"
+"        you visit."
+msgstr ""
+
+#: .\accounts\templates\accounts\privacy.html:173
+msgid ""
+"We have no control over, and assume no responsibility for the content, "
+"privacy policies or\n"
+"        practices of\n"
+"        any third\n"
+"        party sites or services."
+msgstr ""
+
+#: .\accounts\templates\accounts\privacy.html:178
+#, fuzzy
+#| msgid "Privacy Policy"
+msgid "Changes To This Privacy Policy"
+msgstr "Privacy Policy"
+
+#: .\accounts\templates\accounts\privacy.html:180
+msgid ""
+" This Privacy Policy is effective as of June 18, 2020 and will remain in "
+"effect except with\n"
+"        respect to\n"
+"        any\n"
+"        changes in its provisions in the future, which will be in effect "
+"immediately after being posted on this\n"
+"        page."
+msgstr ""
+
+#: .\accounts\templates\accounts\privacy.html:187
+msgid ""
+" We reserve the right to update or change our Privacy Policy at any time and "
+"you should check\n"
+"        this\n"
+"        Privacy\n"
+"        Policy\n"
+"        periodically. Your continued use of the Service after we post any "
+"modifications to the Privacy Policy on\n"
+"        this\n"
+"        page will constitute your acknowledgment of the modifications and "
+"your consent to abide and be bound by\n"
+"        the\n"
+"        modified Privacy Policy."
+msgstr ""
+
+#: .\accounts\templates\accounts\privacy.html:197
+msgid ""
+" If we make any material changes to this Privacy Policy, we will notify you "
+"either through the\n"
+"        email\n"
+"        address you\n"
+"        have provided us, or by placing a prominent notice on our website."
+msgstr ""
+
+#: .\accounts\templates\accounts\privacy.html:202
+msgid ""
+"If you have any questions about these Privacy Policy, please contact: "
+"kamilwaszewski@gmail.com"
+msgstr ""
+
+#: .\accounts\templates\accounts\signup.html:30
+msgid "Create Account"
+msgstr "Account aanmaken"
+
+#: .\accounts\templates\accounts\signup.html:155
+msgid "I read and agree to "
+msgstr "Ik heb de "
+
+#: .\accounts\templates\accounts\signup.html:156
+msgid "Terms &amp; Conditions"
+msgstr "Algemene voorwaarden"
+
+#: .\accounts\templates\accounts\signup.html:157
+msgid " "
+msgstr "gelezen en ga hiermee akkoord"
+
+#: .\accounts\templates\accounts\signup.html:165
+msgid "Already have an account?"
+msgstr "Heeft u al een account?"
+
+#: .\accounts\templates\accounts\signup.html:166
+msgid "Sign In"
+msgstr "Aanmelden"
+
+#: .\accounts\templates\accounts\terms.html:14
+msgid "Terms and Conditions (\"Terms\")"
+msgstr "Algemene voorwaarden"
+
+#: .\accounts\templates\accounts\terms.html:16
+msgid ""
+" Please read these Terms and Conditions (\"Terms\", \"Terms and Conditions"
+"\") carefully before using\n"
+"        the\n"
+"        Langi Application (the \"Service\"). "
+msgstr ""
+
+#: .\accounts\templates\accounts\terms.html:19
+msgid ""
+" Your access to and use of the Service is conditioned upon your acceptance "
+"of and compliance with\n"
+"        these Terms.\n"
+"        These Terms apply to all visitors, users and others who wish to "
+"access or use the Service. "
+msgstr ""
+
+#: .\accounts\templates\accounts\terms.html:23
+msgid ""
+" By accessing or using the Service you agree to be bound by these Terms. If "
+"you\n"
+"        disagree\n"
+"        with any part of\n"
+"        the terms then you do not have permission to access the Service."
+msgstr ""
+
+#: .\accounts\templates\accounts\terms.html:27
+#, fuzzy
+#| msgid "Create Account"
+msgid "Accounts"
+msgstr "Account aanmaken"
+
+#: .\accounts\templates\accounts\terms.html:28
+msgid ""
+" When you create an account with us, you guarantee that you are above the "
+"age of 18, or a Your\n"
+"        legal guardian or\n"
+"        Your parent gives consent, and that the information you provide us "
+"is accurate, complete, and current at all\n"
+"        times. Inaccurate, incomplete, or obsolete information may result in "
+"the immediate termination of your account\n"
+"        on the Service."
+msgstr ""
+
+#: .\accounts\templates\accounts\terms.html:33
+msgid ""
+" You are responsible for maintaining the confidentiality of your account and "
+"password, including\n"
+"        but not limited\n"
+"        to the restriction of access to your computer and/or account. You "
+"agree to accept responsibility for any and all\n"
+"        activities or actions that occur under your account and/or password, "
+"whether your password is with our Service\n"
+"        or a third-party service. You must notify us immediately upon "
+"becoming aware of any breach of security or\n"
+"        unauthorized use of your account."
+msgstr ""
+
+#: .\accounts\templates\accounts\terms.html:39
+msgid "Intellectual Property"
+msgstr ""
+
+#: .\accounts\templates\accounts\terms.html:40
+msgid ""
+" The Service and its original content, features and functionality are and "
+"will remain the\n"
+"        exclusive property of\n"
+"        Langi Application and its author, Kamil Waszewski."
+msgstr ""
+
+#: .\accounts\templates\accounts\terms.html:43
+#, fuzzy
+#| msgid "Informations"
+msgid "Termination"
+msgstr "Informatie"
+
+#: .\accounts\templates\accounts\terms.html:44
+msgid ""
+" We may terminate or suspend your account and bar access to the Service "
+"immediately, without\n"
+"        prior notice or\n"
+"        liability, under our sole discretion, for any reason whatsoever and "
+"without limitation, including but not\n"
+"        limited to a breach of the Terms."
+msgstr ""
+
+#: .\accounts\templates\accounts\terms.html:48
+msgid ""
+"If you wish to terminate your account, you may simply discontinue using the "
+"Service."
+msgstr ""
+
+#: .\accounts\templates\accounts\terms.html:49
+msgid "Indemnification"
+msgstr ""
+
+#: .\accounts\templates\accounts\terms.html:50
+msgid ""
+" You agree to defend, indemnify and hold harmless Langi Application and its "
+"author, from and\n"
+"        against any and all\n"
+"        claims, damages,\n"
+"        obligations, losses, liabilities, costs or debt, and expenses "
+"(including but not limited to attorney's fees),\n"
+"        resulting from or arising out of a) your use and access of the "
+"Service, by you or any person using your account\n"
+"        and password, or b) a breach of these Terms."
+msgstr ""
+
+#: .\accounts\templates\accounts\terms.html:56
+#, fuzzy
+#| msgid "Change"
+msgid "Changes"
+msgstr "Veranderen"
+
+#: .\accounts\templates\accounts\terms.html:57
+msgid ""
+" We reserve the right, at our sole discretion, to modify or replace these "
+"Terms at any time. If a\n"
+"        revision is\n"
+"        material we will provide at least 30 days notice prior to any new "
+"terms taking effect. What constitutes a\n"
+"        material change will be determined at our sole discretion."
+msgstr ""
+
+#: .\accounts\templates\accounts\terms.html:61
+msgid ""
+" By continuing to access or use our Service after any revisions become "
+"effective, you agree to be\n"
+"        bound by the\n"
+"        revised terms. If you do not agree to the new terms, you are no "
+"longer authorized to use the\n"
+"        Service."
+msgstr ""
+
+#: .\accounts\templates\accounts\terms.html:66
+msgid ""
+"If you have any questions about these Terms, please contact: "
+"kamilwaszewski@gmail.com"
+msgstr ""
+
+#: .\accounts\views.py:25
+#, python-brace-format
+msgid "New account was successfully created: {username}"
+msgstr "Nieuw account is aangemaakt: {username}"
+
+#: .\accounts\views.py:50 .\accounts\views.py:52
+msgid "Invalid username or password."
+msgstr "Ongeldige gebruikersnaam of wachtwoord."
+
+#: .\mainContent\templates\mainContent\about.html:24
+msgid "Welcome to the LANGI Application"
+msgstr "Welkom bij de LANGI-applicatie"
+
+#: .\mainContent\templates\mainContent\about.html:25
+msgid "Last updated: June 28, 2020"
+msgstr "Laatst bijgewerkt: 28 juni 2020"
+
+#: .\mainContent\templates\mainContent\about.html:26
+msgid ""
+"\n"
+"            The langi web application was created for all users who wish to "
+"develop their language skills in a pleasant\n"
+"            and convenient way. The application allows you to view and learn "
+"the cards you have created using one of the\n"
+"            most popular\n"
+"            SRS (Spaced Repetition System) algorithms, SM-2. In addition, "
+"apart from the classic approach that\n"
+"            allows you to add new flashcards, the user also has the option "
+"of automatically creating word sets from the\n"
+"            imported files. The application supports both text document "
+"files as well as image files such as .png or\n"
+"            .jpg. The presence of mini-games, with the help of which the "
+"user can learn new words or expressions, also\n"
+"            contributes to pleasant learning. For the convenience of the "
+"user, the application supports 16 interface\n"
+"            languages ​​and two color modes. The \"light\" mode, which is the "
+"default mode, and the \"dark\" mode, which,\n"
+"            due to a number of tests, will certainly be better suited for "
+"night use of the application.\n"
+"            "
+msgstr ""
+"\n"
+"De langi webapplicatie is gemaakt voor alle gebruikers die hun taalvaardigheid op een prettige en gemakkelijke manier willen ontwikkelen. Met de applicatie kun je de kaarten die je hebt gemaakt bekijken en leren met behulp van een van de meest populaire algoritmen zoals SRS (Spaced Repetition System), SM-2. Bovendien heeft de gebruiker, naast de klassieke benadering waarmee u nieuwe flashcards kunt toevoegen, ook de mogelijkheid om automatisch woordsets te maken van geïmporteerde bestanden. De applicatie ondersteunt zowel tekstdocumentbestanden als afbeeldingsbestanden zoals .png of .jpg. De aanwezigheid van mini-games, met behulp waarvan de gebruiker nieuwe woorden of uitdrukkingen kan leren, bevordert ook aangenaam leren. Voor het gemak van de gebruiker ondersteunt de applicatie 16 interfacetalen en twee kleurmodi. De light -modus, die de standaardmodus is, en de donkere -modus, die door een aantal tests zeker beter geschikt zal zijn voor nachtelijk gebruik van de applicatie."
+
+#: .\mainContent\templates\mainContent\about.html:39
+msgid ""
+"\n"
+"            The application was created with the use of Django technology "
+"and Django REST framework, as well as with the\n"
+"            help of the OpenCV (Open Source Computer Vision) library.\n"
+"            "
+msgstr ""
+"\n"
+"De applicatie is gemaakt met Django-technologie en Django REST-framework, evenals met de hulp van de OpenCV-bibliotheek (Open Source Computer Vision)."
+
+#: .\mainContent\templates\mainContent\activity.html:7
+#: .\mainContent\templates\mainContent\layout.html:144
+#: .\mainContent\templates\mainContent\tiles.html:51
+msgid "Activity"
+msgstr "Activiteit"
+
+#: .\mainContent\templates\mainContent\activity.html:20
+msgid "All"
+msgstr "Allemaal"
+
+#: .\mainContent\templates\mainContent\addCard.html:10
+msgid "Add New Card"
+msgstr "Nieuwe kaart toevoegen"
+
+#: .\mainContent\templates\mainContent\addCard.html:18
+msgid "Drop image file here or click to upload"
+msgstr "Zet het afbeeldingsbestand hier neer of klik om te uploaden"
+
+#: .\mainContent\templates\mainContent\addCard.html:19
+#: .\mainContent\templates\mainContent\importTextFiles.html:12
+#: .\mainContent\templates\mainContent\importTextFiles.html:57
+msgid "Invalid file format"
+msgstr "Ongeldig bestandsformaat"
+
+#: .\mainContent\templates\mainContent\addCard.html:35
+msgid "Stop"
+msgstr "Stop"
+
+#: .\mainContent\templates\mainContent\addCard.html:54
+#: .\mainContent\templates\mainContent\importFiles.html:14
+msgid "You should choose any deck."
+msgstr "Je zou elk kaartspel moeten kiezen."
+
+#: .\mainContent\templates\mainContent\addCard.html:68
+#: .\mainContent\templates\mainContent\importTextFiles.html:29
+#: .\mainContent\templates\mainContent\importTextFiles.html:84
+#: .\mainContent\templates\mainContent\learn.html:37
+msgid "Front"
+msgstr "Voorkant"
+
+#: .\mainContent\templates\mainContent\addCard.html:229
+#: .\mainContent\templates\mainContent\decks.html:383
+#: .\mainContent\templates\mainContent\importTextFiles.html:39
+#: .\mainContent\templates\mainContent\importTextFiles.html:94
+#: .\mainContent\templates\mainContent\learn.html:38
+msgid "Back"
+msgstr "Achterkant"
+
+#: .\mainContent\templates\mainContent\addCard.html:393
+msgid "Add some example sentences in your target language"
+msgstr "Voeg enkele voorbeeldzinnen toe in uw doeltaal"
+
+#: .\mainContent\templates\mainContent\addCard.html:468
+#: .\mainContent\templates\mainContent\tiles.html:17
+msgid "Add Card"
+msgstr "Kaart toevoegen"
+
+#: .\mainContent\templates\mainContent\addDeck.html:10
+#: .\mainContent\templates\mainContent\decks.html:378
+msgid "Create New Deck"
+msgstr "Maak een nieuw kaartspel"
+
+#: .\mainContent\templates\mainContent\addDeck.html:17
+msgid "Name"
+msgstr "Naam"
+
+#: .\mainContent\templates\mainContent\addDeck.html:23
+#: .\mainContent\templates\mainContent\deckSettings.html:68
+msgid "Maximum 5 tags separated by commas"
+msgstr "Maximaal 5 tags gescheiden door komma's"
+
+#: .\mainContent\templates\mainContent\addDeck.html:29
+#: .\mainContent\templates\mainContent\deckSettings.html:55
+msgid "The Name field is required."
+msgstr "Het veld Naam is verplicht."
+
+#: .\mainContent\templates\mainContent\addDeck.html:34
+msgid "Add"
+msgstr "Toevoegen"
+
+#: .\mainContent\templates\mainContent\addDeck.html:37
+msgid "Cancel"
+msgstr "Annuleren"
+
+#: .\mainContent\templates\mainContent\deckSettings.html:10
+msgid "Deck Settings"
+msgstr "Kaartspel instellingen"
+
+#: .\mainContent\templates\mainContent\deckSettings.html:18
+#: .\mainContent\templates\mainContent\deckSettings.html:41
+msgid "Delete"
+msgstr "Verwijderen"
+
+#: .\mainContent\templates\mainContent\deckSettings.html:21
+msgid "Rename"
+msgstr "Gebruikersnaam"
+
+#: .\mainContent\templates\mainContent\deckSettings.html:24
+msgid "Change Tag"
+msgstr "Tag wijzigen"
+
+#: .\mainContent\templates\mainContent\deckSettings.html:27
+#: .\mainContent\templates\mainContent\importFiles.html:22
+#: .\mainContent\templates\mainContent\importTextFiles.html:5
+msgid "Import from text file"
+msgstr "Importeren uit tekstbestand"
+
+#: .\mainContent\templates\mainContent\deckSettings.html:30
+#: .\mainContent\templates\mainContent\importFiles.html:25
+#: .\mainContent\templates\mainContent\importTextFiles.html:50
+msgid "Import from image file"
+msgstr "Importeren uit afbeeldingsbestand"
+
+#: .\mainContent\templates\mainContent\deckSettings.html:36
+msgid "Delete Deck"
+msgstr "Kaartspel verwijderen"
+
+#: .\mainContent\templates\mainContent\deckSettings.html:38
+msgid "Warning! Deck will be removed along with all its flashcards."
+msgstr "Waarschuwing! Kaartspel wordt samen met al zijn flashcards verwijderd."
+
+#: .\mainContent\templates\mainContent\deckSettings.html:45
+msgid "Rename Deck"
+msgstr "Hernoem kaartspel"
+
+#: .\mainContent\templates\mainContent\deckSettings.html:47
+msgid "Enter new name for this deck and click CHANGE."
+msgstr "Voer een nieuwe naam in voor dit kaartspel en klik op WIJZIGEN."
+
+#: .\mainContent\templates\mainContent\deckSettings.html:50
+msgid "Enter new name for this deck"
+msgstr "Voer een nieuwe naam in voor dit kaartspel"
+
+#: .\mainContent\templates\mainContent\deckSettings.html:59
+#: .\mainContent\templates\mainContent\deckSettings.html:74
+msgid "Change"
+msgstr "Veranderen"
+
+#: .\mainContent\templates\mainContent\deckSettings.html:63
+msgid "Change Deck's tags"
+msgstr "Wijzig tags van kaartspel"
+
+#: .\mainContent\templates\mainContent\deckSettings.html:65
+msgid "Enter new tags for this deck. Maximum 5 tags separated by commas."
+msgstr ""
+"Voer nieuwe tags in voor dit kaartspel. Maximaal 5 tags gescheiden door "
+"komma's."
+
+#: .\mainContent\templates\mainContent\dictionary.html:7
+#: .\mainContent\templates\mainContent\tiles.html:34
+msgid "Dictionary"
+msgstr "Woordenboek"
+
+#: .\mainContent\templates\mainContent\games.html:27
+msgid "Restart Game"
+msgstr "Spel opnieuw opstarten"
+
+#: .\mainContent\templates\mainContent\games.html:30
+msgid "Restart"
+msgstr "Herstarten"
+
+#: .\mainContent\templates\mainContent\games.html:35
+msgid "Start New Game"
+msgstr "Nieuw spel starten"
+
+#: .\mainContent\templates\mainContent\games.html:38
+msgid "Play"
+msgstr "Speel"
+
+#: .\mainContent\templates\mainContent\games.html:43
+#: .\mainContent\templates\mainContent\tiles.html:42
+msgid "Games"
+msgstr "Spellen"
+
+#: .\mainContent\templates\mainContent\games.html:44
+msgid "Select deck and game you want to play. Good luck!"
+msgstr "Selecteer kaartspel en game die je wilt spelen. Succes!"
+
+#: .\mainContent\templates\mainContent\games.html:55
+msgid "Snake"
+msgstr "Snake"
+
+#: .\mainContent\templates\mainContent\games.html:58
+msgid "Drag & drop"
+msgstr "Drag & drop"
+
+#: .\mainContent\templates\mainContent\games.html:71
+#: .\mainContent\templates\mainContent\games.html:140
+msgid "Score:"
+msgstr "Score:"
+
+#: .\mainContent\templates\mainContent\games.html:75
+msgid "Match translation to:"
+msgstr "Vertaling afstemmen op:"
+
+#: .\mainContent\templates\mainContent\importFiles.html:7
+msgid "Import Files"
+msgstr "Bestanden importeren"
+
+#: .\mainContent\templates\mainContent\importTextFiles.html:7
+msgid ""
+"Add text file into box field located underneath. Accepted file formats are ."
+"txt, .docx. In the field on the right side enter a proper flashcard "
+"separator."
+msgstr ""
+"Voeg een tekstbestand toe aan het vakveld eronder. Geaccepteerde "
+"bestandsindelingen zijn .txt, .docx. Voer in het veld aan de rechterkant een "
+"goede flashcard-scheidingsteken in."
+
+#: .\mainContent\templates\mainContent\importTextFiles.html:11
+#: .\mainContent\templates\mainContent\importTextFiles.html:56
+msgid "Drop file here or click to upload"
+msgstr "Zet het bestand hier neer of klik om te uploaden"
+
+#: .\mainContent\templates\mainContent\importTextFiles.html:18
+msgid "Separator"
+msgstr "Scheidingsteken"
+
+#: .\mainContent\templates\mainContent\importTextFiles.html:25
+#: .\mainContent\templates\mainContent\importTextFiles.html:80
+#: .\mainContent\templates\mainContent\tiles.html:60
+msgid "Import"
+msgstr "Importeren"
+
+#: .\mainContent\templates\mainContent\importTextFiles.html:46
+#: .\mainContent\templates\mainContent\importTextFiles.html:101
+msgid "Save"
+msgstr "Sparen"
+
+#: .\mainContent\templates\mainContent\importTextFiles.html:52
+msgid ""
+"Add image file into box field located underneath. Accepted file formats are ."
+"png, .jpg, .jpeg. Mark proper checkboxes for better extraction result."
+msgstr ""
+"Voeg een afbeeldingsbestand toe aan het vakveld eronder. Geaccepteerde "
+"bestandsindelingen zijn .png, .jpg, .jpeg. Markeer de juiste selectievakjes "
+"voor een beter extractieresultaat."
+
+#: .\mainContent\templates\mainContent\importTextFiles.html:67
+msgid "The photo shows all corners of the paper."
+msgstr "De foto toont alle hoeken van het papier."
+
+#: .\mainContent\templates\mainContent\importTextFiles.html:74
+msgid "The checkered paper was used."
+msgstr "Het geruite papier is gebruikt."
+
+#: .\mainContent\templates\mainContent\layout.html:56
+msgid "Language"
+msgstr "Taal"
+
+#: .\mainContent\templates\mainContent\layout.html:123
+msgid "Theme"
+msgstr "Thema"
+
+#: .\mainContent\templates\mainContent\layout.html:132
+msgid "About"
+msgstr "Over"
+
+#: .\mainContent\templates\mainContent\layout.html:145
+msgid "Logout"
+msgstr "Uitloggen"
+
+#: .\mainContent\templates\mainContent\learn.html:25
+#: .\mainContent\templates\mainContent\tiles.html:26
+msgid "Learn"
+msgstr "Leren"
+
+#: .\mainContent\templates\mainContent\learn.html:26
+msgid "Select deck you want to learn. Good luck!"
+msgstr "Selecteer het kaartspel dat je wilt leren. Succes!"
+
+#: .\mainContent\templates\mainContent\learn.html:83
+msgid "Show answer"
+msgstr "Toon het antwoord"
+
+#: .\mainContent\templates\mainContent\learn.html:88
+msgid "Again"
+msgstr "Opnieuw"
+
+#: .\mainContent\templates\mainContent\learn.html:91
+msgid "Very hard"
+msgstr "Heel moeilijk"
+
+#: .\mainContent\templates\mainContent\learn.html:94
+msgid "Hard"
+msgstr "Moeilijk"
+
+#: .\mainContent\templates\mainContent\learn.html:97
+msgid "Medium"
+msgstr "Medium"
+
+#: .\mainContent\templates\mainContent\learn.html:100
+msgid "Easy"
+msgstr "Gemakkelijk"
+
+#: .\mainContent\templates\mainContent\learn.html:107
+msgid "Use keyboard"
+msgstr "Gebruik toetsenbord"
+
+#: .\mainContent\templates\mainContent\learn.html:109
+msgid "Flip:"
+msgstr "Omdraaien:"
+
+#: .\mainContent\templates\mainContent\learn.html:113
+msgid "Next:"
+msgstr "De volgende:"
+
+#: .\mainContent\templates\mainContent\learn.html:117
+msgid "Again:"
+msgstr "Opnieuw:"
+
+#: .\mainContent\templates\mainContent\learn.html:121
+msgid "Very hard:"
+msgstr "Heel moeilijk:"
+
+#: .\mainContent\templates\mainContent\learn.html:125
+msgid "Hard:"
+msgstr "Moeilijk:"
+
+#: .\mainContent\templates\mainContent\learn.html:129
+msgid "Medium:"
+msgstr "Medium:"
+
+#: .\mainContent\templates\mainContent\learn.html:133
+msgid "Easy:"
+msgstr "Gemakkelijk:"
+
+#: .\mainContent\templates\mainContent\tiles.html:8
+msgid "Decks"
+msgstr "Kaartspellen"
+
+#~ msgid "Test"
+#~ msgstr "Toets"
+
+#~ msgid "Settings"
+#~ msgstr "Instellingen"

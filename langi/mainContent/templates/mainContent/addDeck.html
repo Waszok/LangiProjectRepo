@@ -1,0 +1,40 @@
+{% load static %}
+{% load sass_tags %}
+
+{% load i18n %}
+{% load widget_tweaks %}
+
+<div class="add-deck-window" id="add-deck-window">
+    <div class="add-header add-deck-header">
+        <div class="add-header-top add-card-header-top">
+            <div class="title">{% trans 'Create New Deck' %}</div>
+            <button data-adddeck-close class="close-btn">&times;</button>
+        </div>
+    </div>
+    <div class="add-deck-body">
+        <div class="input-div deckname">
+            <div class="div">
+                <h5>{% trans "Name" %}</h5>
+                <input id="deckNameInputId" type="text" class="input" maxlength="100">
+            </div>
+        </div>
+        <div class="input-div decktags">
+            <div class="div">
+                <h5>{% trans "Maximum 5 tags separated by commas" %}</h5>
+                <input id="deckTagsInputId" type="text" class="input" maxlength="150">
+            </div>
+        </div>
+
+        <div class="required-error required-hide">
+            <span>{% trans "The Name field is required." %}</span>
+        </div>
+    </div>
+    <div class="add-cancel">
+        <div class="addDeck-btn-div create-add" id="createDeck">
+            <button type="submit" class="btn">{% trans "Add" %}</button>
+        </div>
+        <div class="cancelDeck-btn-div create-add">
+            <button class="btn">{% trans "Cancel" %}</button>
+        </div>
+    </div>
+</div>

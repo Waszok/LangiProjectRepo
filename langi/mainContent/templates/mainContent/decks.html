@@ -1,0 +1,396 @@
+{% extends 'mainContent/layout.html' %}
+{% load static %}
+{% load sass_tags %}
+
+{% load i18n %}
+{% load widget_tweaks %}
+
+{% block title %}Decks{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% sass_src 'mainContent/css/slick.scss' %}">
+<link rel="stylesheet" type="text/css" href="{% sass_src 'mainContent/css/home.scss' %}">
+<link rel="stylesheet" type="text/css" href="{% sass_src 'mainContent/css/slickHandle.scss' %}">
+<link rel="stylesheet" type="text/css" href="{% sass_src 'mainContent/css/decks.scss' %}">
+<link rel="stylesheet" type="text/css" href="{% sass_src 'mainContent/css/deckSettings.scss' %}">
+{% endblock %}
+
+{% block content %}
+{% get_current_language as LANGUAGE_CODE %}
+
+{% include 'mainContent/tiles.html' %}
+
+<input type="hidden" id="learnUrl" data-learn-url="{% url 'mainContent:learn' %}" />
+
+<div class="decks-container">
+    <fieldset class="search-container">
+        <input id="searchDeckInput" type="text" placeholder="Search by name or tag ..." class="search-bar" />
+        <div class="search-icons-container">
+            <div class="icon-search"></div>
+            <div class="icon-close">
+                <div class="x-up"></div>
+                <div class="x-down"></div>
+            </div>
+        </div>
+    </fieldset>
+
+
+    <div id="decks-content" class="decks-content">
+        <div class="deck-item-container">
+            <div class="deck-tem">
+                <div class="first-item-block">
+                    <div class="deck-item__first-part">
+                        <img src="{% static 'mainContent/images/icons/decksTransparent.png' %}" alt="">
+                        <span class="deck-name">Talia z angielskiego</span>
+                    </div>
+                    <div class="tagi">
+                        <span>#english</span>
+                        <span>#nowy język</span>
+                        <span>#tag</span>
+                    </div>
+                </div>
+                <div class="deck-item__second-part">
+                    <span class="due-flachcards">187</span>
+                    <span class="new-flashcards">20</span>
+                    <img class="add-flashcard plusOrangeTransparent"
+                        src="{% static 'mainContent/images/icons/plusTransparent.png' %}" alt="add icon"
+                        onmouseover="IconHoverDeck(this, 1);" onmouseout="IconUnhoverDeck(this, 1);"
+                        data-addcard-open="#add-card-window"></img>
+                    <a href="{% url 'mainContent:learn' %}">
+                        <img class="learn-deck learnOrangeTransparent"
+                            src="{% static 'mainContent/images/icons/learnTransparent.png' %}" alt="learn icon"
+                            onmouseover="IconHoverDeck(this, 2);" onmouseout="IconUnhoverDeck(this, 2);">
+                    </a>
+                    <img class="settings-deck settingsOrangeTransparent"
+                        src="{% static 'mainContent/images/icons/settingsTransparent.png' %}" alt="settings icon"
+                        onmouseover="IconHoverDeck(this, 3);" onmouseout="IconUnhoverDeck(this, 3);" role="button"
+                        data-decksettings-open="#deck-settings-window">
+                </div>
+            </div>
+            <hr class="deck-item-line">
+        </div>
+
+        <div class="deck-item-container">
+            <div class="deck-tem">
+                <div class="deck-item__first-part">
+                    <img src="{% static 'mainContent/images/icons/decksTransparent.png' %}" alt="">
+                    <span class="deck-name">Talia z angielskiego</span>
+                </div>
+                <div class="deck-item__second-part">
+                    <span class="due-flachcards">187</span>
+                    <span class="new-flashcards">20</span>
+                    <div class="add-flashcard"></div>
+                    <img class="learn-deck" src="{% static 'mainContent/images/icons/learnTransparent.png' %}" alt="">
+                    <img class="settings-deck" src="{% static 'mainContent/images/icons/settingsTransparent.png' %}"
+                        alt="">
+                </div>
+            </div>
+            <hr class="deck-item-line">
+        </div>
+
+
+        <div class="deck-item-container">
+            <div class="deck-tem">
+                <div class="deck-item__first-part">
+                    <img src="{% static 'mainContent/images/icons/decksTransparent.png' %}" alt="">
+                    <span class="deck-name">Talia z angielskiego</span>
+                </div>
+                <div class="deck-item__second-part">
+                    <span class="due-flachcards">187</span>
+                    <span class="new-flashcards">20</span>
+                    <div class="add-flashcard"></div>
+                    <img class="learn-deck" src="{% static 'mainContent/images/icons/learnTransparent.png' %}" alt="">
+                    <img class="settings-deck" src="{% static 'mainContent/images/icons/settingsTransparent.png' %}"
+                        alt="">
+                </div>
+            </div>
+            <hr class="deck-item-line">
+        </div>
+
+
+        <div class="deck-item-container">
+            <div class="deck-tem">
+                <div class="deck-item__first-part">
+                    <img src="{% static 'mainContent/images/icons/decksTransparent.png' %}" alt="">
+                    <span class="deck-name">Talia z angielskiego</span>
+                </div>
+                <div class="deck-item__second-part">
+                    <span class="due-flachcards">187</span>
+                    <span class="new-flashcards">20</span>
+                    <div class="add-flashcard"></div>
+                    <img class="learn-deck" src="{% static 'mainContent/images/icons/learnTransparent.png' %}" alt="">
+                    <img class="settings-deck" src="{% static 'mainContent/images/icons/settingsTransparent.png' %}"
+                        alt="">
+                </div>
+            </div>
+            <hr class="deck-item-line">
+        </div>
+
+
+
+        <div class="deck-item-container">
+            <div class="deck-tem">
+                <div class="deck-item__first-part">
+                    <img src="{% static 'mainContent/images/icons/decksTransparent.png' %}" alt="">
+                    <span class="deck-name">Talia z angielskiego</span>
+                </div>
+                <div class="deck-item__second-part">
+                    <span class="due-flachcards">187</span>
+                    <span class="new-flashcards">20</span>
+                    <div class="add-flashcard"></div>
+                    <img class="learn-deck" src="{% static 'mainContent/images/icons/learnTransparent.png' %}" alt="">
+                    <img class="settings-deck" src="{% static 'mainContent/images/icons/settingsTransparent.png' %}"
+                        alt="">
+                </div>
+            </div>
+            <hr class="deck-item-line">
+        </div>
+
+
+        <div class="deck-item-container">
+            <div class="deck-tem">
+                <div class="deck-item__first-part">
+                    <img src="{% static 'mainContent/images/icons/decksTransparent.png' %}" alt="">
+                    <span class="deck-name">Talia z angielskiego</span>
+                </div>
+                <div class="deck-item__second-part">
+                    <span class="due-flachcards">187</span>
+                    <span class="new-flashcards">20</span>
+                    <div class="add-flashcard"></div>
+                    <img class="learn-deck" src="{% static 'mainContent/images/icons/learnTransparent.png' %}" alt="">
+                    <img class="settings-deck" src="{% static 'mainContent/images/icons/settingsTransparent.png' %}"
+                        alt="">
+                </div>
+            </div>
+            <hr class="deck-item-line">
+        </div>
+
+
+        <div class="deck-item-container">
+            <div class="deck-tem">
+                <div class="deck-item__first-part">
+                    <img src="{% static 'mainContent/images/icons/decksTransparent.png' %}" alt="">
+                    <span class="deck-name">Talia z angielskiego</span>
+                </div>
+                <div class="deck-item__second-part">
+                    <span class="due-flachcards">187</span>
+                    <span class="new-flashcards">20</span>
+                    <div class="add-flashcard"></div>
+                    <img class="learn-deck" src="{% static 'mainContent/images/icons/learnTransparent.png' %}" alt="">
+                    <img class="settings-deck" src="{% static 'mainContent/images/icons/settingsTransparent.png' %}"
+                        alt="">
+                </div>
+            </div>
+            <hr class="deck-item-line">
+        </div>
+
+        <div class="deck-item-container">
+            <div class="deck-tem">
+                <div class="deck-item__first-part">
+                    <img src="{% static 'mainContent/images/icons/decksTransparent.png' %}" alt="">
+                    <span class="deck-name">Talia z angielskiego</span>
+                </div>
+                <div class="deck-item__second-part">
+                    <span class="due-flachcards">187</span>
+                    <span class="new-flashcards">20</span>
+                    <div class="add-flashcard"></div>
+                    <img class="learn-deck" src="{% static 'mainContent/images/icons/learnTransparent.png' %}" alt="">
+                    <img class="settings-deck" src="{% static 'mainContent/images/icons/settingsTransparent.png' %}"
+                        alt="">
+                </div>
+            </div>
+            <hr class="deck-item-line">
+        </div>
+
+
+        <div class="deck-item-container">
+            <div class="deck-tem">
+                <div class="deck-item__first-part">
+                    <img src="{% static 'mainContent/images/icons/decksTransparent.png' %}" alt="">
+                    <span class="deck-name">Talia z angielskiego</span>
+                </div>
+                <div class="deck-item__second-part">
+                    <span class="due-flachcards">187</span>
+                    <span class="new-flashcards">20</span>
+                    <div class="add-flashcard"></div>
+                    <img class="learn-deck" src="{% static 'mainContent/images/icons/learnTransparent.png' %}" alt="">
+                    <img class="settings-deck" src="{% static 'mainContent/images/icons/settingsTransparent.png' %}"
+                        alt="">
+                </div>
+            </div>
+            <hr class="deck-item-line">
+        </div>
+
+        <div class="deck-item-container">
+            <div class="deck-tem">
+                <div class="deck-item__first-part">
+                    <img src="{% static 'mainContent/images/icons/decksTransparent.png' %}" alt="">
+                    <span class="deck-name">Talia z angielskiego</span>
+                </div>
+                <div class="deck-item__second-part">
+                    <span class="due-flachcards">187</span>
+                    <span class="new-flashcards">20</span>
+                    <div class="add-flashcard"></div>
+                    <img class="learn-deck" src="{% static 'mainContent/images/icons/learnTransparent.png' %}" alt="">
+                    <img class="settings-deck" src="{% static 'mainContent/images/icons/settingsTransparent.png' %}"
+                        alt="">
+                </div>
+            </div>
+            <hr class="deck-item-line">
+        </div>
+
+
+        <div class="deck-item-container">
+            <div class="deck-tem">
+                <div class="deck-item__first-part">
+                    <img src="{% static 'mainContent/images/icons/decksTransparent.png' %}" alt="">
+                    <span class="deck-name">Talia z angielskiego</span>
+                </div>
+                <div class="deck-item__second-part">
+                    <span class="due-flachcards">187</span>
+                    <span class="new-flashcards">20</span>
+                    <div class="add-flashcard"></div>
+                    <img class="learn-deck" src="{% static 'mainContent/images/icons/learnTransparent.png' %}" alt="">
+                    <img class="settings-deck" src="{% static 'mainContent/images/icons/settingsTransparent.png' %}"
+                        alt="">
+                </div>
+            </div>
+            <hr class="deck-item-line">
+        </div>
+
+
+        <div class="deck-item-container">
+            <div class="deck-tem">
+                <div class="deck-item__first-part">
+                    <img src="{% static 'mainContent/images/icons/decksTransparent.png' %}" alt="">
+                    <span class="deck-name">Talia z angielskiego</span>
+                </div>
+                <div class="deck-item__second-part">
+                    <span class="due-flachcards">187</span>
+                    <span class="new-flashcards">20</span>
+                    <div class="add-flashcard"></div>
+                    <img class="learn-deck" src="{% static 'mainContent/images/icons/learnTransparent.png' %}" alt="">
+                    <img class="settings-deck" src="{% static 'mainContent/images/icons/settingsTransparent.png' %}"
+                        alt="">
+                </div>
+            </div>
+            <hr class="deck-item-line">
+        </div>
+
+
+        <div class="deck-item-container">
+            <div class="deck-tem">
+                <div class="deck-item__first-part">
+                    <img src="{% static 'mainContent/images/icons/decksTransparent.png' %}" alt="">
+                    <span class="deck-name">Talia z angielskiego</span>
+                </div>
+                <div class="deck-item__second-part">
+                    <span class="due-flachcards">187</span>
+                    <span class="new-flashcards">20</span>
+                    <div class="add-flashcard"></div>
+                    <img class="learn-deck" src="{% static 'mainContent/images/icons/learnTransparent.png' %}" alt="">
+                    <img class="settings-deck" src="{% static 'mainContent/images/icons/settingsTransparent.png' %}"
+                        alt="">
+                </div>
+            </div>
+            <hr class="deck-item-line">
+        </div>
+
+
+        <div class="deck-item-container">
+            <div class="deck-tem">
+                <div class="deck-item__first-part">
+                    <img src="{% static 'mainContent/images/icons/decksTransparent.png' %}" alt="">
+                    <span class="deck-name">Talia z angielskiego</span>
+                </div>
+                <div class="deck-item__second-part">
+                    <span class="due-flachcards">187</span>
+                    <span class="new-flashcards">20</span>
+                    <div class="add-flashcard"></div>
+                    <img class="learn-deck" src="{% static 'mainContent/images/icons/learnTransparent.png' %}" alt="">
+                    <img class="settings-deck" src="{% static 'mainContent/images/icons/settingsTransparent.png' %}"
+                        alt="">
+                </div>
+            </div>
+            <hr class="deck-item-line">
+        </div>
+
+        <div class="deck-item-container">
+            <div class="deck-tem">
+                <div class="deck-item__first-part">
+                    <img src="{% static 'mainContent/images/icons/decksTransparent.png' %}" alt="">
+                    <span class="deck-name">Talia z angielskiego</span>
+                </div>
+                <div class="deck-item__second-part">
+                    <span class="due-flachcards">187</span>
+                    <span class="new-flashcards">20</span>
+                    <div class="add-flashcard"></div>
+                    <img class="learn-deck" src="{% static 'mainContent/images/icons/learnTransparent.png' %}" alt="">
+                    <img class="settings-deck" src="{% static 'mainContent/images/icons/settingsTransparent.png' %}"
+                        alt="">
+                </div>
+            </div>
+            <hr class="deck-item-line">
+        </div>
+
+        <div class="deck-item-container">
+            <div class="deck-tem">
+                <div class="deck-item__first-part">
+                    <img src="{% static 'mainContent/images/icons/decksTransparent.png' %}" alt="">
+                    <span class="deck-name">Talia z angielskiego</span>
+                </div>
+                <div class="deck-item__second-part">
+                    <span class="due-flachcards">187</span>
+                    <span class="new-flashcards">20</span>
+                    <div class="add-flashcard"></div>
+                    <img class="learn-deck" src="{% static 'mainContent/images/icons/learnTransparent.png' %}" alt="">
+                    <img class="settings-deck" src="{% static 'mainContent/images/icons/settingsTransparent.png' %}"
+                        alt="">
+                </div>
+            </div>
+            <hr class="deck-item-line">
+        </div>
+
+        <div class="deck-item-container">
+            <div class="deck-tem">
+                <div class="deck-item__first-part">
+                    <img src="{% static 'mainContent/images/icons/decksTransparent.png' %}" alt="">
+                    <span class="deck-name">Talia z angielskiego</span>
+                </div>
+                <div class="deck-item__second-part">
+                    <span class="due-flachcards">187</span>
+                    <span class="new-flashcards">20</span>
+                    <div class="add-flashcard"></div>
+                    <img class="learn-deck" src="{% static 'mainContent/images/icons/learnTransparent.png' %}" alt="">
+                    <img class="settings-deck" src="{% static 'mainContent/images/icons/settingsTransparent.png' %}"
+                        alt="">
+                </div>
+            </div>
+            <hr class="deck-item-line">
+        </div>
+    </div>
+
+    <div id="deck-content" class="decks-content" style="display: none;"></div>
+
+
+    <div class="create-add" role="button" data-adddeck-open="#add-deck-window" id="create-deck-btn-id">
+        <div class="x-cross"></div>
+        <button class="btn">{% trans 'Create New Deck' %}</button>
+    </div>
+
+    <div class="create-add" role="button" id="back-deck-btn-id" style="display: none;" onclick="backToDecksView()">
+        <div class="arrow left"></div>
+        <button class="btn">{% trans 'Back' %}</button>
+    </div>
+</div>
+
+{% include 'mainContent/deckSettings.html' %}
+
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript" src="{% static 'mainContent/js/slick.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'mainContent/js/slickHandle.js' %}"></script>
+<script type="text/javascript" src="{% static 'mainContent/js/decks.js' %}"></script>
+<script type="text/javascript" src="{% static 'mainContent/js/deckSettings.js' %}"></script>
+{% endblock %}

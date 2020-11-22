@@ -1,0 +1,475 @@
+{% load static %}
+{% load sass_tags %}
+
+{% load i18n %}
+{% load widget_tweaks %}
+
+<div class="add-card-window" id="add-card-window">
+    <div class="add-header add-card-header">
+        <div class="add-header-top add-card-header-top">
+            <div class="title">{% trans 'Add New Card' %}</div>
+            <button data-addcard-close class="close-btn">&times;</button>
+        </div>
+    </div>
+    <div class="add-card-body">
+        <div class="add-card-top-container">
+            <div class="drop-zone-container">
+                <div class="drop-zone">
+                    <span class="drop-zone__prompt">{% trans 'Drop image file here or click to upload' %}</span>
+                    <!--<span class="drop-zone__error">{% trans 'Invalid file format' %}</span>-->
+                    <!--<div class="drop-zone__thumb" data-img-label="myImg.png"></div>-->
+                    <input type="file" name="frontImg" class="drop-zone__input">
+                </div>
+                <div class="drop-zone-icons">
+                    <button class="basket-btn" id="remove-example-img">
+                        <img src="{% static 'mainContent/images/basketIcon.png' %}" alt="remove button"
+                            onmouseover="IconHoverAddCard(this, 3);" onmouseout="IconUnhoverAddCard(this, 3);">
+                    </button>
+                    <button class="record-btn" type="button" id="record-btn">
+                        <img src="{% static 'mainContent/images/recordIcon.png' %}" alt="record button"
+                            onmouseover="IconHoverAddCard(this, 2);" onmouseout="IconUnhoverAddCard(this, 2);">
+                    </button>
+                    <div class="recording hidden" id="recording">
+                        <div class="create-add stop-btn" role="button" id="stop-btn">
+                            <button class="btn" type="button">
+                                {% trans 'Stop' %}
+                            </button>
+                        </div>
+                        <div class="recording-time" id="recording-time">00:00:00
+                        </div>
+                    </div>
+                    <audio id="audio" type="audio/wav"></audio>
+                    <div class="player hidden">
+                        <img class="player-img" src="{% static 'mainContent/images/speakerIcon.png' %}" alt="speaker">
+                        <div class="player-time">0:00/0:00</div>
+                        <div class="player-btns">
+                            <div class="iconfont play-pause icon-play"></div>
+                        </div>
+                        <div class="player-progress"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="select-deck-container">
+                <div class="add-card-no-deck-error" id="add-card-no-deck-error">
+                    {% trans 'You should choose any deck.' %}</div>
+                <img class="add-deck-plus" src="{% static 'mainContent/images/icons/plusTransparent.png' %}"
+                    alt="add icon" data-adddeck-open="#add-deck-window" onmouseover="IconHoverAddCard(this, 1);"
+                    onmouseout="IconUnhoverAddCard(this, 1);"></img>
+
+                {% include 'mainContent/selectDeckList.html' %}
+
+
+            </div>
+        </div>
+
+        <div class="text-container">
+            <div class="flashcard-side-container front-container">
+                <div class="flashcard-title-select">
+                    <p>{% trans 'Front' %}</p>
+                    <div class="flashcard-select-language-container select-language-front">
+                        <select id="selected-front-lang">
+                            <option>Afrikaans</option>
+                            <option>Shqiptar</option>
+                            <option>English</option>
+                            <option>عربى</option>
+                            <option>Azeri</option>
+                            <option>Euskal</option>
+                            <option>বাংলা</option>
+                            <option>Беларуская</option>
+                            <option>Bosanski</option>
+                            <option>български</option>
+                            <option>繁體中文</option>
+                            <option>简体中文</option>
+                            <option>Hrvatski</option>
+                            <option>Český</option>
+                            <option>Dansk</option>
+                            <option>Esperanto</option>
+                            <option>Eestlane</option>
+                            <option>Pilipino</option>
+                            <option>Suomalainen</option>
+                            <option>Français</option>
+                            <option>Frysk</option>
+                            <option>Galego</option>
+                            <option>Ελληνική</option>
+                            <option>ქართული</option>
+                            <option>ગુડારતી</option>
+                            <option>Hausa</option>
+                            <option>Ōlelo Hawaiʻi</option>
+                            <option>עברית</option>
+                            <option>हिन्दी</option>
+                            <option>Español</option>
+                            <option>bahasa Indonesia</option>
+                            <option>Gaeilge</option>
+                            <option>Íslensku</option>
+                            <option>日本語</option>
+                            <option>Basa jawa</option>
+                            <option>יידיש</option>
+                            <option>Yoruba</option>
+                            <option>ಕನ್ನಡ</option>
+                            <option>Català</option>
+                            <option>Қазақ</option>
+                            <option>ខ្មែរ</option>
+                            <option>Кыргызча</option>
+                            <option>한국어</option>
+                            <option>Corsu</option>
+                            <option>Kreyòl</option>
+                            <option>Kurdî</option>
+                            <option>ລາວ</option>
+                            <option>Lietuvių</option>
+                            <option>Lëtzebuergesch</option>
+                            <option>Latine</option>
+                            <option>Latvietis</option>
+                            <option>Македонски</option>
+                            <option>മലയാളം</option>
+                            <option>Bahasa Melayu</option>
+                            <option>Malagasy</option>
+                            <option>Malti</option>
+                            <option>Maori</option>
+                            <option>मराठी</option>
+                            <option>Монгол</option>
+                            <option>नेपाली</option>
+                            <option>Nederlands</option>
+                            <option>Deutsch</option>
+                            <option>Norsk</option>
+                            <option>հայերեն</option>
+                            <option>فارسی</option>
+                            <option>Português</option>
+                            <option>Polski</option>
+                            <option>Русский</option>
+                            <option>Română</option>
+                            <option>Sāmoa</option>
+                            <option>Српски</option>
+                            <option>Shona</option>
+                            <option>Slovenský</option>
+                            <option>Slovenščina</option>
+                            <option>Soomaali</option>
+                            <option>Kiswahili</option>
+                            <option>Urang Sunda</option>
+                            <option>Svenska</option>
+                            <option>Точик</option>
+                            <option>ไทย</option>
+                            <option>தமிழ்</option>
+                            <option>Татар</option>
+                            <option>తెలుగు</option>
+                            <option>Türkçe</option>
+                            <option>Türkmenler</option>
+                            <option>Українська</option>
+                            <option>اردو</option>
+                            <option>O'zbek</option>
+                            <option>Cymraeg</option>
+                            <option>Magyar</option>
+                            <option>Tiếng Việt</option>
+                            <option>Italiano</option>
+                            <option>Zulu</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="whole-flashcard">
+                    <div class="flashcard-text-box">
+                        <div id="flashcard-text-front-notkor"
+                            class="flashcard-text textarea wordwrap flashcard-text-front" contenteditable="true">
+                        </div>
+                        <textarea id="flashcard-text-front-kor" class="flashcard-text flashcard-text-front"
+                            charset="UTF-8"></textarea>
+                        <div id="flashcard-text-wordCounter-front" class="flashcard-text-wordCounter">0/150</div>
+                    </div>
+                    <div class="colors">
+                        <ul class="colors-front">
+                            <li class="scale"></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="buttons-panel">
+                    <button class="flashcard-btn" id="flashcard-btn-bold-front" onclick="boldText()">
+                        <svg style="width:24px;height:24px;" viewBox="0 0 24 24">
+                            <path fill="currentColor"
+                                d="M13.5,15.5H10V12.5H13.5A1.5,1.5 0 0,1 15,14A1.5,1.5 0 0,1 13.5,15.5M10,6.5H13A1.5,1.5 0 0,1 14.5,8A1.5,1.5 0 0,1 13,9.5H10M15.6,10.79C16.57,10.11 17.25,9 17.25,8C17.25,5.74 15.5,4 13.25,4H7V18H14.04C16.14,18 17.75,16.3 17.75,14.21C17.75,12.69 16.89,11.39 15.6,10.79Z" />
+                        </svg>
+                    </button>
+                    <button class="flashcard-btn" id="flashcard-btn-underline-front" onclick="underline()"><svg
+                            style="width:24px;height:24px;" viewBox="0 0 24 24">
+                            <path fill="currentColor"
+                                d="M5,21H19V19H5V21M12,17A6,6 0 0,0 18,11V3H15.5V11A3.5,3.5 0 0,1 12,14.5A3.5,3.5 0 0,1 8.5,11V3H6V11A6,6 0 0,0 12,17Z" />
+                        </svg></button>
+                    <button class="flashcard-btn" id="flashcard-btn-uppercase-front" onclick="uppercase()"><svg
+                            style="width:24px;height:24px;" viewBox="0 0 24 24">
+                            <path fill="currentColor"
+                                d="M20.06,18C20,17.83 19.91,17.54 19.86,17.11C19.19,17.81 18.38,18.16 17.45,18.16C16.62,18.16 15.93,17.92 15.4,17.45C14.87,17 14.6,16.39 14.6,15.66C14.6,14.78 14.93,14.1 15.6,13.61C16.27,13.12 17.21,12.88 18.43,12.88H19.83V12.24C19.83,11.75 19.68,11.36 19.38,11.07C19.08,10.78 18.63,10.64 18.05,10.64C17.53,10.64 17.1,10.76 16.75,11C16.4,11.25 16.23,11.54 16.23,11.89H14.77C14.77,11.46 14.92,11.05 15.22,10.65C15.5,10.25 15.93,9.94 16.44,9.71C16.95,9.5 17.5,9.36 18.13,9.36C19.11,9.36 19.87,9.6 20.42,10.09C20.97,10.58 21.26,11.25 21.28,12.11V16C21.28,16.8 21.38,17.42 21.58,17.88V18H20.06M17.66,16.88C18.11,16.88 18.54,16.77 18.95,16.56C19.35,16.35 19.65,16.07 19.83,15.73V14.16H18.7C16.93,14.16 16.04,14.63 16.04,15.57C16.04,16 16.19,16.3 16.5,16.53C16.8,16.76 17.18,16.88 17.66,16.88M5.46,13.71H9.53L7.5,8.29L5.46,13.71M6.64,6H8.36L13.07,18H11.14L10.17,15.43H4.82L3.86,18H1.93L6.64,6M2,20H13V22H2V20Z" />
+                        </svg></button>
+                    <button class="flashcard-btn" id="flashcard-btn-colorText-front" onclick="colorText(1)"><svg
+                            style="width:24px;height:24px;" viewBox="0 0 24 24">
+                            <path fill="currentColor"
+                                d="M17.5,12A1.5,1.5 0 0,1 16,10.5A1.5,1.5 0 0,1 17.5,9A1.5,1.5 0 0,1 19,10.5A1.5,1.5 0 0,1 17.5,12M14.5,8A1.5,1.5 0 0,1 13,6.5A1.5,1.5 0 0,1 14.5,5A1.5,1.5 0 0,1 16,6.5A1.5,1.5 0 0,1 14.5,8M9.5,8A1.5,1.5 0 0,1 8,6.5A1.5,1.5 0 0,1 9.5,5A1.5,1.5 0 0,1 11,6.5A1.5,1.5 0 0,1 9.5,8M6.5,12A1.5,1.5 0 0,1 5,10.5A1.5,1.5 0 0,1 6.5,9A1.5,1.5 0 0,1 8,10.5A1.5,1.5 0 0,1 6.5,12M12,3A9,9 0 0,0 3,12A9,9 0 0,0 12,21A1.5,1.5 0 0,0 13.5,19.5C13.5,19.11 13.35,18.76 13.11,18.5C12.88,18.23 12.73,17.88 12.73,17.5A1.5,1.5 0 0,1 14.23,16H16A5,5 0 0,0 21,11C21,6.58 16.97,3 12,3Z" />
+                        </svg></button>
+                    <button id="keyboard-front-btn" class="flashcard-btn"><svg style="width:24px;height:24px;"
+                            viewBox="0 0 24 24">
+                            <path fill="currentColor"
+                                d="M4,5A2,2 0 0,0 2,7V17A2,2 0 0,0 4,19H20A2,2 0 0,0 22,17V7A2,2 0 0,0 20,5H4M4,7H20V17H4V7M5,8V10H7V8H5M8,8V10H10V8H8M11,8V10H13V8H11M14,8V10H16V8H14M17,8V10H19V8H17M5,11V13H7V11H5M8,11V13H10V11H8M11,11V13H13V11H11M14,11V13H16V11H14M17,11V13H19V11H17M8,14V16H16V14H8Z" />
+                        </svg></button>
+                    <button class="flashcard-btn" onclick="translateText(1)"><svg style="width:24px;height:24px;"
+                            viewBox="0 0 24 24">
+                            <path fill="currentColor"
+                                d="M12.87,15.07L10.33,12.56L10.36,12.53C12.1,10.59 13.34,8.36 14.07,6H17V4H10V2H8V4H1V6H12.17C11.5,7.92 10.44,9.75 9,11.35C8.07,10.32 7.3,9.19 6.69,8H4.69C5.42,9.63 6.42,11.17 7.67,12.56L2.58,17.58L4,19L9,14L12.11,17.11L12.87,15.07M18.5,10H16.5L12,22H14L15.12,19H19.87L21,22H23L18.5,10M15.88,17L17.5,12.67L19.12,17H15.88Z" />
+                        </svg></button>
+                </div>
+
+                <div class="keyboard-container hidden" id="keyboard-front">
+                    <div class="keyboard-buttons-container-front">
+                    </div>
+                </div>
+            </div>
+            <div class="flashcard-side-container back-container">
+                <div class="flashcard-title-select">
+                    <p>{% trans 'Back' %}</p>
+                    <div class="flashcard-select-language-container select-language-back">
+                        <select id="selected-back-lang">
+                            <option>Afrikaans</option>
+                            <option>Shqiptar</option>
+                            <option>English</option>
+                            <option>عربى</option>
+                            <option>Azeri</option>
+                            <option>Euskal</option>
+                            <option>বাংলা</option>
+                            <option>Беларуская</option>
+                            <option>Bosanski</option>
+                            <option>български</option>
+                            <option>繁體中文</option>
+                            <option>简体中文</option>
+                            <option>Hrvatski</option>
+                            <option>Český</option>
+                            <option>Dansk</option>
+                            <option>Esperanto</option>
+                            <option>Eestlane</option>
+                            <option>Pilipino</option>
+                            <option>Suomalainen</option>
+                            <option>Français</option>
+                            <option>Frysk</option>
+                            <option>Galego</option>
+                            <option>Ελληνική</option>
+                            <option>ქართული</option>
+                            <option>ગુડારતી</option>
+                            <option>Hausa</option>
+                            <option>Ōlelo Hawaiʻi</option>
+                            <option>עברית</option>
+                            <option>हिन्दी</option>
+                            <option>Español</option>
+                            <option>bahasa Indonesia</option>
+                            <option>Gaeilge</option>
+                            <option>Íslensku</option>
+                            <option>日本語</option>
+                            <option>Basa jawa</option>
+                            <option>יידיש</option>
+                            <option>Yoruba</option>
+                            <option>ಕನ್ನಡ</option>
+                            <option>Català</option>
+                            <option>Қазақ</option>
+                            <option>ខ្មែរ</option>
+                            <option>Кыргызча</option>
+                            <option>한국어</option>
+                            <option>Corsu</option>
+                            <option>Kreyòl</option>
+                            <option>Kurdî</option>
+                            <option>ລາວ</option>
+                            <option>Lietuvių</option>
+                            <option>Lëtzebuergesch</option>
+                            <option>Latine</option>
+                            <option>Latvietis</option>
+                            <option>Македонски</option>
+                            <option>മലയാളം</option>
+                            <option>Bahasa Melayu</option>
+                            <option>Malagasy</option>
+                            <option>Malti</option>
+                            <option>Maori</option>
+                            <option>मराठी</option>
+                            <option>Монгол</option>
+                            <option>नेपाली</option>
+                            <option>Nederlands</option>
+                            <option>Deutsch</option>
+                            <option>Norsk</option>
+                            <option>հայերեն</option>
+                            <option>فارسی</option>
+                            <option>Português</option>
+                            <option>Polski</option>
+                            <option>Русский</option>
+                            <option>Română</option>
+                            <option>Sāmoa</option>
+                            <option>Српски</option>
+                            <option>Shona</option>
+                            <option>Slovenský</option>
+                            <option>Slovenščina</option>
+                            <option>Soomaali</option>
+                            <option>Kiswahili</option>
+                            <option>Urang Sunda</option>
+                            <option>Svenska</option>
+                            <option>Точик</option>
+                            <option>ไทย</option>
+                            <option>தமிழ்</option>
+                            <option>Татар</option>
+                            <option>తెలుగు</option>
+                            <option>Türkçe</option>
+                            <option>Türkmenler</option>
+                            <option>Українська</option>
+                            <option>اردو</option>
+                            <option>O'zbek</option>
+                            <option>Cymraeg</option>
+                            <option>Magyar</option>
+                            <option>Tiếng Việt</option>
+                            <option>Italiano</option>
+                            <option>Zulu</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="whole-flashcard">
+                    <div class="flashcard-text-box">
+                        <div id="flashcard-text-back-notkor"
+                            class="flashcard-text textarea wordwrap flashcard-text-back" contenteditable="true">
+                        </div>
+                        <textarea id="flashcard-text-back-kor" class="flashcard-text flashcard-text-back"
+                            charset="UTF-8"></textarea>
+                        <div id="flashcard-text-wordCounter-back" class="flashcard-text-wordCounter">0/150</div>
+                    </div>
+                    <div class="colors">
+                        <ul class="colors-back">
+                            <li class="scale"></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="buttons-panel">
+                    <button class="flashcard-btn" id="flashcard-btn-bold-back" onclick="boldText()">
+                        <svg style="width:24px;height:24px;" viewBox="0 0 24 24">
+                            <path fill="currentColor"
+                                d="M13.5,15.5H10V12.5H13.5A1.5,1.5 0 0,1 15,14A1.5,1.5 0 0,1 13.5,15.5M10,6.5H13A1.5,1.5 0 0,1 14.5,8A1.5,1.5 0 0,1 13,9.5H10M15.6,10.79C16.57,10.11 17.25,9 17.25,8C17.25,5.74 15.5,4 13.25,4H7V18H14.04C16.14,18 17.75,16.3 17.75,14.21C17.75,12.69 16.89,11.39 15.6,10.79Z" />
+                        </svg>
+                    </button>
+                    <button class="flashcard-btn" id="flashcard-btn-underline-back" onclick="underline()"><svg
+                            style="width:24px;height:24px;" viewBox="0 0 24 24">
+                            <path fill="currentColor"
+                                d="M5,21H19V19H5V21M12,17A6,6 0 0,0 18,11V3H15.5V11A3.5,3.5 0 0,1 12,14.5A3.5,3.5 0 0,1 8.5,11V3H6V11A6,6 0 0,0 12,17Z" />
+                        </svg></button>
+                    <button class="flashcard-btn" id="flashcard-btn-uppercase-back" onclick="uppercase()"><svg
+                            style="width:24px;height:24px;" viewBox="0 0 24 24">
+                            <path fill="currentColor"
+                                d="M20.06,18C20,17.83 19.91,17.54 19.86,17.11C19.19,17.81 18.38,18.16 17.45,18.16C16.62,18.16 15.93,17.92 15.4,17.45C14.87,17 14.6,16.39 14.6,15.66C14.6,14.78 14.93,14.1 15.6,13.61C16.27,13.12 17.21,12.88 18.43,12.88H19.83V12.24C19.83,11.75 19.68,11.36 19.38,11.07C19.08,10.78 18.63,10.64 18.05,10.64C17.53,10.64 17.1,10.76 16.75,11C16.4,11.25 16.23,11.54 16.23,11.89H14.77C14.77,11.46 14.92,11.05 15.22,10.65C15.5,10.25 15.93,9.94 16.44,9.71C16.95,9.5 17.5,9.36 18.13,9.36C19.11,9.36 19.87,9.6 20.42,10.09C20.97,10.58 21.26,11.25 21.28,12.11V16C21.28,16.8 21.38,17.42 21.58,17.88V18H20.06M17.66,16.88C18.11,16.88 18.54,16.77 18.95,16.56C19.35,16.35 19.65,16.07 19.83,15.73V14.16H18.7C16.93,14.16 16.04,14.63 16.04,15.57C16.04,16 16.19,16.3 16.5,16.53C16.8,16.76 17.18,16.88 17.66,16.88M5.46,13.71H9.53L7.5,8.29L5.46,13.71M6.64,6H8.36L13.07,18H11.14L10.17,15.43H4.82L3.86,18H1.93L6.64,6M2,20H13V22H2V20Z" />
+                        </svg></button>
+                    <button class="flashcard-btn" id="flashcard-btn-colorText-back" onclick="colorText(2)"><svg
+                            style="width:24px;height:24px;" viewBox="0 0 24 24">
+                            <path fill="currentColor"
+                                d="M17.5,12A1.5,1.5 0 0,1 16,10.5A1.5,1.5 0 0,1 17.5,9A1.5,1.5 0 0,1 19,10.5A1.5,1.5 0 0,1 17.5,12M14.5,8A1.5,1.5 0 0,1 13,6.5A1.5,1.5 0 0,1 14.5,5A1.5,1.5 0 0,1 16,6.5A1.5,1.5 0 0,1 14.5,8M9.5,8A1.5,1.5 0 0,1 8,6.5A1.5,1.5 0 0,1 9.5,5A1.5,1.5 0 0,1 11,6.5A1.5,1.5 0 0,1 9.5,8M6.5,12A1.5,1.5 0 0,1 5,10.5A1.5,1.5 0 0,1 6.5,9A1.5,1.5 0 0,1 8,10.5A1.5,1.5 0 0,1 6.5,12M12,3A9,9 0 0,0 3,12A9,9 0 0,0 12,21A1.5,1.5 0 0,0 13.5,19.5C13.5,19.11 13.35,18.76 13.11,18.5C12.88,18.23 12.73,17.88 12.73,17.5A1.5,1.5 0 0,1 14.23,16H16A5,5 0 0,0 21,11C21,6.58 16.97,3 12,3Z" />
+                        </svg></button>
+                    <button id="keyboard-back-btn" class="flashcard-btn"><svg style="width:24px;height:24px;"
+                            viewBox="0 0 24 24">
+                            <path fill="currentColor"
+                                d="M4,5A2,2 0 0,0 2,7V17A2,2 0 0,0 4,19H20A2,2 0 0,0 22,17V7A2,2 0 0,0 20,5H4M4,7H20V17H4V7M5,8V10H7V8H5M8,8V10H10V8H8M11,8V10H13V8H11M14,8V10H16V8H14M17,8V10H19V8H17M5,11V13H7V11H5M8,11V13H10V11H8M11,11V13H13V11H11M14,11V13H16V11H14M17,11V13H19V11H17M8,14V16H16V14H8Z" />
+                        </svg></button>
+                    <button class="flashcard-btn" onclick="translateText(2)"><svg style="width:24px;height:24px;"
+                            viewBox="0 0 24 24">
+                            <path fill="currentColor"
+                                d="M12.87,15.07L10.33,12.56L10.36,12.53C12.1,10.59 13.34,8.36 14.07,6H17V4H10V2H8V4H1V6H12.17C11.5,7.92 10.44,9.75 9,11.35C8.07,10.32 7.3,9.19 6.69,8H4.69C5.42,9.63 6.42,11.17 7.67,12.56L2.58,17.58L4,19L9,14L12.11,17.11L12.87,15.07M18.5,10H16.5L12,22H14L15.12,19H19.87L21,22H23L18.5,10M15.88,17L17.5,12.67L19.12,17H15.88Z" />
+                        </svg></button>
+                </div>
+
+                <div class="keyboard-container" id="keyboard-back">
+                    <div class="keyboard-buttons-container-back">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="example-sentences-container" id="example-sentences-container">
+            <div class="example-sentences-header">
+                <div class="example-sentences-title">
+                    {% trans 'Add some example sentences in your target language' %}
+                </div>
+            </div>
+            <div class="example-sentences-body">
+                <div class="sentence-container">
+                    <div class="sentence">
+                        <textarea id="sentence-textarea-1" class="sentence-textarea" charset="UTF-8"></textarea>
+                        <div class="sentence-button-panel">
+                            <button class="sentence-button" id="keyboard-sentence-1-btn"><svg
+                                    style="width:24px;height:24px;" viewBox="0 0 24 24">
+                                    <path fill="currentColor"
+                                        d="M4,5A2,2 0 0,0 2,7V17A2,2 0 0,0 4,19H20A2,2 0 0,0 22,17V7A2,2 0 0,0 20,5H4M4,7H20V17H4V7M5,8V10H7V8H5M8,8V10H10V8H8M11,8V10H13V8H11M14,8V10H16V8H14M17,8V10H19V8H17M5,11V13H7V11H5M8,11V13H10V11H8M11,11V13H13V11H11M14,11V13H16V11H14M17,11V13H19V11H17M8,14V16H16V14H8Z" />
+                                </svg></button>
+                        </div>
+
+                        <div class="keyboard-sentence-container" id="keyboard-sentence-1">
+                            <div class="keyboard-buttons-sentence-1-container">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="add-next-sentence">
+                        <img class="add-sentence-plus" src="{% static 'mainContent/images/icons/plusTransparent.png' %}"
+                            alt="add next sentence" onmouseover="IconHoverAddCard(this, 1);"
+                            onmouseout="IconUnhoverAddCard(this, 1);" onclick="nextSentence('two')"></img>
+                    </div>
+                </div>
+            </div>
+            <div class="example-sentences-body two hidden" id="two">
+                <div class="sentence-container">
+                    <div class="sentence">
+                        <textarea id="sentence-textarea-2" class="sentence-textarea" charset="UTF-8"></textarea>
+                        <div class="sentence-button-panel">
+                            <button class="sentence-button" id="keyboard-sentence-2-btn"><svg
+                                    style="width:24px;height:24px;" viewBox="0 0 24 24">
+                                    <path fill="currentColor"
+                                        d="M4,5A2,2 0 0,0 2,7V17A2,2 0 0,0 4,19H20A2,2 0 0,0 22,17V7A2,2 0 0,0 20,5H4M4,7H20V17H4V7M5,8V10H7V8H5M8,8V10H10V8H8M11,8V10H13V8H11M14,8V10H16V8H14M17,8V10H19V8H17M5,11V13H7V11H5M8,11V13H10V11H8M11,11V13H13V11H11M14,11V13H16V11H14M17,11V13H19V11H17M8,14V16H16V14H8Z" />
+                                </svg></button>
+                        </div>
+
+                        <div class="keyboard-sentence-container" id="keyboard-sentence-2">
+                            <div class="keyboard-buttons-sentence-2-container">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="add-next-sentence">
+                        <img class="add-sentence-plus" src="{% static 'mainContent/images/icons/plusTransparent.png' %}"
+                            alt="add next sentence" onmouseover="IconHoverAddCard(this, 1);"
+                            onmouseout="IconUnhoverAddCard(this, 1);" onclick="nextSentence('three')"></img>
+                    </div>
+                </div>
+            </div>
+            <div class="example-sentences-body three hidden" id="three">
+                <div class="sentence-container">
+                    <div class="sentence">
+                        <textarea id="sentence-textarea-3" class="sentence-textarea" charset="UTF-8"></textarea>
+                        <div class="sentence-button-panel">
+                            <button class="sentence-button" id="keyboard-sentence-3-btn"><svg
+                                    style="width:24px;height:24px;" viewBox="0 0 24 24">
+                                    <path fill="currentColor"
+                                        d="M4,5A2,2 0 0,0 2,7V17A2,2 0 0,0 4,19H20A2,2 0 0,0 22,17V7A2,2 0 0,0 20,5H4M4,7H20V17H4V7M5,8V10H7V8H5M8,8V10H10V8H8M11,8V10H13V8H11M14,8V10H16V8H14M17,8V10H19V8H17M5,11V13H7V11H5M8,11V13H10V11H8M11,11V13H13V11H11M14,11V13H16V11H14M17,11V13H19V11H17M8,14V16H16V14H8Z" />
+                                </svg></button>
+                        </div>
+
+                        <div class="keyboard-sentence-container" id="keyboard-sentence-3">
+                            <div class="keyboard-buttons-sentence-3-container">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="create-add" id="createCard">
+        <div class="x-cross"></div>
+        <button type="submit" class="btn">{% trans 'Add Card' %}</button>
+    </div>
+</div>
+
+
+{% block js %}
+
+{% endblock %}

@@ -1,0 +1,87 @@
+.create-add {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  border: 3px solid var(--border-button-color);
+  background-color: var(--create-add-button-color);
+  align-items: center;
+  width: 100%;
+  height: 30px;
+  bottom: 0px;
+  cursor: pointer; }
+
+.btn {
+  position: relative;
+  display: block;
+  height: 24px;
+  outline: none;
+  background-color: var(--create-add-button-color);
+  border-left: none;
+  border-right: none;
+  border-top: 3px solid var(--border-button-color);
+  border-bottom: 3px solid var(--border-button-color);
+  font-size: 19px;
+  color: var(--create-add-text-color);
+  font-family: inherit;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer; }
+
+.x-cross {
+  position: relative;
+  margin-right: 30px;
+  z-index: 10; }
+  .x-cross:before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 3px;
+    background-color: var(--create-add-text-color); }
+  .x-cross:after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 3px;
+    background-color: var(--create-add-text-color);
+    transform: rotate(90deg); }
+
+.arrow {
+  border: solid var(--create-add-text-color);
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  margin-right: 10px;
+  margin-top: 3px;
+  z-index: 10;
+  padding: 3px; }
+
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg); }
+
+.create-add:hover .btn {
+  color: var(--create-add-hover-color); }
+
+.create-add:hover .x-cross:before {
+  background-color: var(--create-add-hover-color); }
+
+.create-add:hover .x-cross:after {
+  background-color: var(--create-add-hover-color); }
+
+.create-add:hover .arrow {
+  border: solid var(--create-add-hover-color);
+  border-width: 0 3px 3px 0; }
+
+.dark .create-add:hover {
+  background-color: var(--create-add-hover-color); }
+  .dark .create-add:hover .btn {
+    color: var(--create-add-text-color);
+    background-color: var(--create-add-hover-color); }
+  .dark .create-add:hover .x-cross:before {
+    background-color: var(--create-add-text-color); }
+  .dark .create-add:hover .x-cross:after {
+    background-color: var(--create-add-text-color); }
+  .dark .create-add:hover .arrow {
+    border: solid var(--create-add-text-color);
+    border-width: 0 3px 3px 0; }
+
+/*# sourceMappingURL=createAddBtn.css.map */

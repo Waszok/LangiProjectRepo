@@ -1,0 +1,103 @@
+.drag-drop-board{
+    position: relative;
+    background-color: var(--snake-board-color);
+    width: 60vmin;
+    height: 60vmin;
+    left: calc(50% - 30vmin);
+
+    border: 2px solid var(--snake-board-border);
+}
+
+.drag-drop-board-content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.draggable-elements,
+.droppable-elements {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 30px;
+
+    .draggable,
+    .droppable {
+        background-color: white;
+        margin-bottom: 10px;
+        width: 150px;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        font-weight: 400;
+        color: var(--drag-drop-text-color);
+        transition: opacity 0.2s;
+    }
+
+    .draggable {
+        cursor: move;
+        border: 2px solid var(--drag-drop-text-color);
+    }
+    
+    .draggable:hover {
+        opacity: 0.5;
+    }
+    
+    .droppable { 
+        border: 2px solid hsl(200, 100%, 50%);
+
+        .droppable-img {
+            pointer-events: none;
+        }
+    }
+
+    .droppable.droppable-hover {
+        border-width: 4px;
+        transform: scale(1.1);
+    }
+
+    .draggable.dragged,
+    .droppable.dragged {
+        user-select: none;
+        opacity: 0.1;
+        cursor: default;
+    }
+
+    .droppable.dragged:hover,
+    .draggable.dragged:hover {
+        opacity: 0.1;
+    }
+}
+
+
+//SIDE PANEL (SCORE, LIFES)
+.dragdrop-side-panel {
+    top: 0;
+    left: calc(50% + 31vmin);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+
+    .lifes {
+        .life-flag {
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    .dragdrop-score {
+        span {
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        .dragdrop-score-text {
+            font-size: 16px;
+            font-weight: 500;
+        }
+    }
+}
+
+
+

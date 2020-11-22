@@ -1,0 +1,157 @@
+{% extends 'mainContent/layout.html' %}
+{% load static %}
+{% load sass_tags %}
+
+{% load i18n %}
+{% load widget_tweaks %}
+
+{% block title %}Games{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% sass_src 'mainContent/css/slick.scss' %}">
+<link rel="stylesheet" type="text/css" href="{% sass_src 'mainContent/css/home.scss' %}">
+<link rel="stylesheet" type="text/css" href="{% sass_src 'mainContent/css/slickHandle.scss' %}">
+<link rel="stylesheet" type="text/css" href="{% sass_src 'mainContent/css/games/games.scss' %}">
+<link rel="stylesheet" type="text/css" href="{% sass_src 'mainContent/css/games/snake.scss' %}">
+<link rel="stylesheet" type="text/css" href="{% sass_src 'mainContent/css/games/dragAndDrop.scss' %}">
+{% endblock %}
+
+{% block content %}
+{% get_current_language as LANGUAGE_CODE %}
+
+{% include 'mainContent/tiles.html' %}
+
+<div class="decks-container">
+    <div class="restart-game-window" id="restart-game-window">
+        <div class="restart-game-header">
+            <div class="title">{% trans 'Restart Game' %}</div>
+        </div>
+        <div class="create-add" id="restart-game">
+            <button class="btn">{% trans "Restart" %}</button>
+        </div>
+    </div>
+    <div class="start-game-window" id="start-game-window">
+        <div class="start-game-header">
+            <div class="title">{% trans 'Start New Game' %}</div>
+        </div>
+        <div class="create-add" id="start-game">
+            <button class="btn">{% trans "Play" %}</button>
+        </div>
+    </div>
+    <div class="games-header">
+        <div class="games-header-top">
+            <div class="title">{% trans 'Games' %}</div>
+            <span class="help-text">{% trans 'Select deck and game you want to play. Good luck!' %}</span>
+        </div>
+        <div class="deck-selection-content">
+            <div class="deck-selection">
+                {% include 'mainContent/selectDeckList.html' %}
+            </div>
+        </div>
+    </div>
+    <div class="games-body">
+        <div class="games-headings">
+            <div class="gameCard snakeCard" data-start-game="#start-game-window" role="button">
+                <p class="gameCard__title">{% trans 'Snake' %}</p>
+            </div>
+            <div class="gameCard dargAndDropCard" data-start-game="#start-game-window" role="button">
+                <p class="gameCard__title">{% trans 'Drag & drop' %}</p>
+            </div>
+        </div>
+        <div class="games-contents">
+            <div class="games-content">
+                <div id="game-board" class="game-board"></div>
+                <div class="snake-side-panel">
+                    <div class="lifes">
+                        <img class="life-flag" alt="Life flag1">
+                        <img class="life-flag" alt="Life flag2">
+                        <img class="life-flag" alt="Life flag3">
+                    </div>
+                    <div class="snake-score">
+                        <span class="snake-score-text">{% trans 'Score:' %}</span>
+                        <span id="snake-score-value">0</span>
+                    </div>
+                    <div class="drawn-word-content">
+                        <span class="drawn-word-text">{% trans 'Match translation to:' %}</span>
+                        <img id="snake-match-word" class="drawn-word">
+                    </div>
+                    <div class="possible-translations">
+                        <div class="translation-one">
+                            <div class="box box-one"></div>
+                            <img class="translation-word" id="translation-one">
+                        </div>
+                        <div class="translation-two">
+                            <div class="box box-two"></div>
+                            <img class="translation-word" id="translation-two">
+                        </div>
+                        <div class="translation-three">
+                            <div class="box box-three"></div>
+                            <img class="translation-word" id="translation-three">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="games-content">
+                <div class="drag-drop-board">
+                    <div class="drag-drop-board-content">
+                        <section class="draggable-elements">
+                            <div class="draggable" draggable="true" id="draggable-0">
+                                <img class="draggable-img" alt="no card">
+                            </div>
+                            <div class="draggable" draggable="true" id="draggable-1">
+                                <img class="draggable-img" alt="no card">
+                            </div>
+                            <div class="draggable" draggable="true" id="draggable-2">
+                                <img class="draggable-img" alt="no card">
+                            </div>
+                            <div class="draggable" draggable="true" id="draggable-3">
+                                <img class="draggable-img" alt="no card">
+                            </div>
+                            <div class="draggable" draggable="true" id="draggable-4">
+                                <img class="draggable-img" alt="no card">
+                            </div>
+                        </section>
+                        <section class="droppable-elements">
+                            <div class="droppable" data-draggable-id="draggable-2">
+                                <img class="droppable-img" id="droppable-1" alt="no card">
+                            </div>
+                            <div class="droppable" data-draggable-id="draggable-5">
+                                <img class="droppable-img" id="droppable-2" alt="no card">
+                            </div>
+                            <div class="droppable" data-draggable-id="draggable-4">
+                                <img class="droppable-img" id="droppable-3" alt="no card">
+                            </div>
+                            <div class="droppable" data-draggable-id="draggable-1">
+                                <img class="droppable-img" id="droppable-4" alt="no card">
+                            </div>
+                            <div class="droppable" data-draggable-id="draggable-3">
+                                <img class="droppable-img" id="droppable-5" alt="no card">
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                <div class="dragdrop-side-panel">
+                    <div class="lifes">
+                        <img class="life-flag" alt="Life flag1">
+                        <img class="life-flag" alt="Life flag2">
+                        <img class="life-flag" alt="Life flag3">
+                    </div>
+                    <div class="dragdrop-score">
+                        <span class="dragdrop-score-text">{% trans 'Score:' %}</span>
+                        <span id="dragdrop-score-value">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript" src="{% static 'mainContent/js/slick.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'mainContent/js/slickHandle.js' %}"></script>
+<script type="module" src="{% static 'mainContent/js/games/games.js' %}"></script>
+<script type="module" src="{% static 'mainContent/js/games/snake/snakeGame.js' %}"></script>
+<script type="module" src="{% static 'mainContent/js/games/dragAndDrop/dragAndDropGame.js' %}"></script>
+{% endblock %}
