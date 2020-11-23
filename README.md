@@ -8,7 +8,7 @@ Langi is an application designed to help its users develop their language skills
 
 ## App's features:
 *  Creating a user account, logging in to the application and resetting the password by sending the appropriate link to the e-mail address provided during registration;
-* Changing a user interface language (the available languages are **English**, **German**, **Polish**, **Czech**, **Spanish**, **French**, **Italian**, **Lithuanian**, **Dutch**, **Portuguese**, **Turkish**, **Russian**, **Traditional chinese**, **Japanese**, **Korean**, **Greek**);
+* Changing a user interface language (the available languages are **English**, **German**, **Polish**, **Czech**, **Spanish**, **French**, **Italian**, **Lithuanian**, **Dutch**, **Portuguese**, **Turkish**, **Russian**, **Traditional Chinese**, **Japanese**, **Korean**, **Greek**);
 * Changing an application theme between light and dark;
 * Adding new decks by specifying the deck name and optional tags;
 * Editing name and tags, delete and preview basic deck informations;
@@ -33,3 +33,9 @@ Langi is an application designed to help its users develop their language skills
 ![Add card light](Screenshots/add_card_2.png)
 ![Add card dark](Screenshots/add_card_4.png)
 ![Learn](Screenshots/learn.png)
+![Snake game](Screenshots/snake.png)
+
+## Detection text using OpenCV library:
+![Edges Deetection](Screenshots/detection/edges.png)
+![Canny Algorithm](Screenshots/detection/canny.png)
+![Detection Lines](Screenshots/detection/detectionLines.png)
