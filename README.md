@@ -115,7 +115,7 @@ Creating a Virtual Environment and Installing Dependencies on Windows 10:
     python3 -m pip install --upgrade pip
     ```
 
-For other operating systems it looks similarly. For more information, check the link below:
+For other operating systems it looks similarly. For more information, check the link below:&nbsp;
 https://docs.python.org/3/tutorial/venv.html
 
 
