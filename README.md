@@ -54,6 +54,9 @@ Langi is an application designed to help its users develop their language skills
 <p align="center">
 <img src="Screenshots/detection/detectionLines.png" width="300"><p>
 
+&nbsp;
+&nbsp;
+
 ## Used tools and technologies:
 * Python 3.8.1
 * Django Framework 3.0.4
@@ -67,3 +70,56 @@ Langi is an application designed to help its users develop their language skills
 * Chart.js 2.8.0
 * HTML 5.1
 * Sass (Sassy CSS)
+
+&nbsp;
+&nbsp;
+
+## Used tools and technologies:
+
+To run it locally create a virtual environment by yourself and install the necessary dependencies (see the file requirements.txt). If you want to properly display user interface in all languages, you should download the appropriate fonts (for asian languages):
+
+Noto Sans CJK JP - https://www.google.com/get/noto/#sans-jpan
+Noto Sans CJK KR - https://www.google.com/get/noto/#sans-kore
+Noto Sans CJK TC - https://www.google.com/get/noto/#sans-hant
+
+After downloading each of the above packages, decompress the .zip file, and then copy the files with the .otf extension (exactly Bold, DemiLight, Light, Medium, Regular and Thin fonts) according to:
+
+```bash
+\langi\management\static\management\fonts\NotoSansCJKJP
+\langi\management\static\ management\fonts\NotoSansCJKKR
+\langi\management\static\management\fonts\NotoSansCJKTC
+```
+
+Creating a Virtual Environment and Installing Dependencies on Windows 10:
+
+1. Make sure you have the correct Python distribution installed, preferred version is at least 3.8. Then add it to the PATH variable on your system.
+1. Create a virtual environment and install the necessary dependencies:
+* at the level of the folder where the application code is located, i.e. the *\langi* folder, execute:
+
+    ```bash
+    python -m venv LangiProjectEnv
+    ```
+* start the virtual environment with the command:
+
+    ```bash
+    LangiProjectEnv\Scripts\activate
+    ```
+(Note: You may need to run Windows PowerShell with the "Run as Administrator" option)
+* install the necessary dependencies:
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+    (Note: make sure you have the latest version of pip, the software we use to install dependencies (including the Django framework):
+    ```bash
+    python3 -m pip install --upgrade pip
+    ```
+
+For other operating systems it looks similarly. For more information, check the link below:
+https://docs.python.org/3/tutorial/venv.html
+
+
+TO LAUNCH THE LOCAL SERVER OF THE APPLICATION, GO TO FOLDER *\Langi* AND EXECUTE:
+```bash
+python manage.py runserver
+```
