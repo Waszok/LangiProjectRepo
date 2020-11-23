@@ -81,6 +81,7 @@ To run it locally create a virtual environment by yourself and install the neces
 Noto Sans CJK JP - https://www.google.com/get/noto/#sans-jpan \
 Noto Sans CJK KR - https://www.google.com/get/noto/#sans-kore \
 Noto Sans CJK TC - https://www.google.com/get/noto/#sans-hant \
+&nbsp;
 After downloading each of the above packages, decompress the .zip file, and then copy the files with the .otf extension (exactly Bold, DemiLight, Light, Medium, Regular and Thin fonts) according to:
 
 ```bash
