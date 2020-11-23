@@ -37,11 +37,33 @@ Langi is an application designed to help its users develop their language skills
 
 | ![Learn](Screenshots/learn.png) | ![Snake game](Screenshots/snake.png) |
 | ----------------------------------------- | --------------------------------------- |
+
 &nbsp;
 &nbsp;
 
 ## Text detection using OpenCV library:
 
+<p align="center">
 <img src="Screenshots/detection/edges.png" width="300">
+<p>
+
+<p align="center">
 <img src="Screenshots/detection/canny.png" width="300">
-<img src="Screenshots/detection/detectionLines.png" width="300">
+<p>
+
+<p align="center">
+<img src="Screenshots/detection/detectionLines.png" width="300"><p>
+
+## Used tools and technologies:
+* Python 3.8.1
+* Django Framework 3.0.4
+* Django REST framework 3.11.0
+* OpenCV-Python 4.2
+* NumPy 1.19.0
+* Pillow 7.1.2
+* JavaScript + jQuery 3.5.1
+* p5.sound.js 0.7.2
+* slick.js (jQuery plugin) 1.8.1
+* Chart.js 2.8.0
+* HTML 5.1
+* Sass (Sassy CSS)
