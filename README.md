@@ -78,10 +78,9 @@ Langi is an application designed to help its users develop their language skills
 
 To run it locally create a virtual environment by yourself and install the necessary dependencies (see the file requirements.txt). If you want to properly display user interface in all languages, you should download the appropriate fonts (for asian languages):
 
-Noto Sans CJK JP - https://www.google.com/get/noto/#sans-jpan\
-Noto Sans CJK KR - https://www.google.com/get/noto/#sans-kore\
-Noto Sans CJK TC - https://www.google.com/get/noto/#sans-hant\
-
+Noto Sans CJK JP - https://www.google.com/get/noto/#sans-jpan \
+Noto Sans CJK KR - https://www.google.com/get/noto/#sans-kore \
+Noto Sans CJK TC - https://www.google.com/get/noto/#sans-hant \
 After downloading each of the above packages, decompress the .zip file, and then copy the files with the .otf extension (exactly Bold, DemiLight, Light, Medium, Regular and Thin fonts) according to:
 
 ```bash
@@ -115,7 +114,7 @@ Creating a Virtual Environment and Installing Dependencies on Windows 10:
     python3 -m pip install --upgrade pip
     ```
 
-For other operating systems it looks similarly. For more information, check the link below:&nbsp;
+For other operating systems it looks similarly. For more information, check the link below:\
 https://docs.python.org/3/tutorial/venv.html
 
 
