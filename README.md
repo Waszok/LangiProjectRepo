@@ -24,18 +24,24 @@ Langi is an application designed to help its users develop their language skills
 * Standard method of learning words and phrases using the SRS algorithm;
 * The ability to track the learning statistics created in the form of bar charts and tables.
 
-
+&nbsp;
+&nbsp;
 
 ## Some extra screenshots:
 
-![Home light](Screenshots/home_light.png)
-![Home dark](Screenshots/home_dark.png)
-![Add card light](Screenshots/add_card_2.png)
-![Add card dark](Screenshots/add_card_4.png)
-![Learn](Screenshots/learn.png)
-![Snake game](Screenshots/snake.png)
+| ![Home light](Screenshots/home_light.png) | ![Home dark](Screenshots/home_dark.png) |
+| ----------------------------------------- | --------------------------------------- |
 
-## Detection text using OpenCV library:
-![Edges Deetection](Screenshots/detection/edges.png)
-![Canny Algorithm](Screenshots/detection/canny.png)
-![Detection Lines](Screenshots/detection/detectionLines.png)
+| ![Add card light](Screenshots/add_card_2.png) | ![Add card dark](Screenshots/add_card_4.png) |
+| ----------------------------------------- | --------------------------------------- |
+
+| ![Learn](Screenshots/learn.png) | ![Snake game](Screenshots/snake.png) |
+| ----------------------------------------- | --------------------------------------- |
+&nbsp;
+&nbsp;
+
+## Text detection using OpenCV library:
+
+<img src="Screenshots/detection/edges.png" width="300">
+<img src="Screenshots/detection/canny.png" width="300">
+<img src="Screenshots/detection/detectionLines.png" width="300">
