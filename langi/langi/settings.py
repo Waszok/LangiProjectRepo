@@ -177,8 +177,8 @@ SASS_PROCESSOR_ROOT = os.path.join(BASE_DIR, 'static')
 # EMAIL_HOST = 'smtp.gmail.com'
 # EMAIL_PORT = 587
 # EMAIL_USE_TLS = True
-# EMAIL_HOST_USER = 'kamilwaszewski@gmail.com'
-# EMAIL_HOST_PASSWORD = 'wZxaF$m#V6P100'
+# EMAIL_HOST_USER = 'test@gmail.com'
+# EMAIL_HOST_PASSWORD = 'zzzz'
 
 EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
 EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
